@@ -43,7 +43,7 @@
                                 <td width="200px">2</td>
                                 <td width="200px">PL3AA</td>
                                 <td width="200px">
-                                    <a href="/pelaksanaanMingguan" class="btn btn-primary btn-sm ">
+                                    <a href="/laporanmingguan" class="btn btn-primary btn-sm ">
                                                 <span class="icon fa fa-arrow-right"></span>
                                     </a>
                                 </td>
