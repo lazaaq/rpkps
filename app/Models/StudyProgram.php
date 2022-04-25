@@ -9,7 +9,7 @@ class StudyProgram extends Model
 {
     use HasFactory;
 
-    public function course()
+    public function courses()
     {
         return $this->hasMany(Course::class);
     }
