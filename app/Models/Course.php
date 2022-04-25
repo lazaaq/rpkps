@@ -14,4 +14,14 @@ class Course extends Model
     {
         return $this->belongsTo(StudyProgram::class);
     }
+
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+
+    public function learningGoalCourses()
+    {
+        return $this->hasMany(LearningGoalCourse::class);
+    }
 }

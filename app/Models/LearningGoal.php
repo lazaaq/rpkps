@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class LearningGoal extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function graduateProfileLearningGoals()
+    {
+        return $this->hasMany(GraduateProfileLearningGoal::class);
+    }
 }
