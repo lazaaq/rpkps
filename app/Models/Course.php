@@ -9,4 +9,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Course extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function studyProgram()
+    {
+        return $this->belongsTo(StudyProgram::class);
+    }
+
+    public function semester()
+    {
+        return $this->belongsTo(Semester::class);
+    }
+
+    public function learningGoalCourses()
+    {
+        return $this->hasMany(LearningGoalCourse::class);
+    }
 }
