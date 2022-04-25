@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             StudyProgramSeeder::class,
             SemesterSeeder::class,
             GraduateProfileLearningGoalSeeder::class,
+            LearningGoalCourseSeeder::class
         ]);
     }
 }
