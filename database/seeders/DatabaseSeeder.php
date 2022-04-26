@@ -16,14 +16,15 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CourseSeeder::class,
+            SemesterSeeder::class,
             LecturerSeeder::class,
             StudyProgramSeeder::class,
-            SemesterSeeder::class,
             GraduateProfileLearningGoalSeeder::class,
             LearningGoalCourseSeeder::class,
             CurriculumSeeder::class,
             LecturerPlottingSeeder::class,
-            ClassroomSeeder::class
+            ClassroomSeeder::class,
+            CourseClassroomSeeder::class,
         ]);
     }
 }
