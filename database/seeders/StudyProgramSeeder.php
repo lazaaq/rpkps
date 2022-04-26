@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\HeadOfStudyProgram;
 use App\Models\StudyProgram;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -15,6 +16,11 @@ class StudyProgramSeeder extends Seeder
      */
     public function run()
     {
-        StudyProgram::factory()->count(5)->create();
+        for($i = 0; $i < 5; $i++) {
+            StudyProgram::factory()->count(1)->create();
+            HeadOfStudyProgram::factory()->count(1)->create([
+                'study_program_id' => ($i+1),
+            ]);
+        }
     }
 }
