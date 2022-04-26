@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('rpkpms', function (Blueprint $table) {
+        Schema::create('cpmk_cpl_courses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('rpkps_id');
-            $table->double('scales', null, 2);
-            $table->string('method_offline');
-            $table->string('method_online');
-            $table->string('time_offline');
-            $table->string('time_online');
-            $table->string('experience_offline');
-            $table->string('experience_online');
+            $table->unsignedBigInteger('cpl_course_id');
+            $table->unsignedBigInteger('cpmk_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rpkpms');
+        Schema::dropIfExists('cpmk_cpl_courses');
     }
 };

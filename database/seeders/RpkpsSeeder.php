@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\CplCourse;
 use App\Models\Cpmk;
+use App\Models\CpmkCplCourse;
 use App\Models\Rpkps;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,12 +18,18 @@ class RpkpsSeeder extends Seeder
      */
     public function run()
     {
-        Rpkps::factory()->count(10)->create();
+        $constant = 10;
 
-        for($i=1; $i<=10; $i++) {
+        Rpkps::factory()->count($constant)->create();
+
+        for($i=1; $i<=$constant; $i++) {
             CplCourse::factory()->count(1)->create();
 
             Cpmk::factory()->count(1)->create();
+
+            CpmkCplCourse::factory()->count(1)->create([
+                'rpkps_id' => $i,
+            ]);
         }
     }
 }
