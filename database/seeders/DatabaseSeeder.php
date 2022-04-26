@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             GraduateProfileLearningGoalSeeder::class,
             LearningGoalCourseSeeder::class,
             CurriculumSeeder::class,
-            LecturerPlottingSeeder::class
+            LecturerPlottingSeeder::class,
+            ClassroomSeeder::class
         ]);
     }
 }
