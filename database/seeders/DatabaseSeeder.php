@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             StudentClassroomSeeder::class,
             RpkpsSeeder::class,
             RpkpmSeeder::class,
+            StudyRoomSeeder::class,
         ]);
     }
 }
