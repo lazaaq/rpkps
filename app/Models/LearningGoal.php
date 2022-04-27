@@ -14,4 +14,9 @@ class LearningGoal extends Model
     {
         return $this->hasMany(GraduateProfileLearningGoal::class);
     }
+
+    public function learningGoalCourses()
+    {
+        return $this->hasMany(LearningGoalCourse::class);
+    }
 }

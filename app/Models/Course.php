@@ -24,4 +24,19 @@ class Course extends Model
     {
         return $this->hasMany(LearningGoalCourse::class);
     }
+
+    public function rpkps()
+    {
+        return $this->hasMany(Rpkps::class);
+    }
+
+    public function courseClassrooms()
+    {
+        return $this->hasMany(CourseClassroom::class);
+    }
+
+    public function lecturerPlottings()
+    {
+        return $this->hasMany(LecturerPlotting::class);
+    }
 }

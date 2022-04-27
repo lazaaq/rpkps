@@ -13,4 +13,14 @@ class Semester extends Model
     {
         return $this->hasMany(Course::class);
     }
+
+    public function classrooms()
+    {
+        return $this->hasMany(Classroom::class);
+    }
+
+    public function rpkps()
+    {
+        return $this->hasMany(Rpkps::class);
+    }
 }
