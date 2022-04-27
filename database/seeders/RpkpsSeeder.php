@@ -6,6 +6,7 @@ use App\Models\CplCourse;
 use App\Models\Cpmk;
 use App\Models\CpmkCplCourse;
 use App\Models\Rpkps;
+use App\Models\StudyMaterial;
 use App\Models\Task;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -35,5 +36,8 @@ class RpkpsSeeder extends Seeder
                 'cpmk_cpl_course_id' => $cpmkCplCourse[0]->id,
             ]);
         }
+
+        StudyMaterial::factory()->count(20)->create();
+
     }
 }
