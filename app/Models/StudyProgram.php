@@ -13,4 +13,14 @@ class StudyProgram extends Model
     {
         return $this->hasMany(Course::class);
     }
+
+    public function headOfStudyProgram()
+    {
+        return $this->hasOne(HeadOfStudyProgram::class);
+    }
+
+    public function rpkps()
+    {
+        return $this->hasMany(Rpkps::class);
+    }
 }

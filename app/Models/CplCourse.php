@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CplCourse extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function cpmkCplCourses()
+    {
+        return $this->hasMany(CpmkCplCourse::class);
+    }
 }

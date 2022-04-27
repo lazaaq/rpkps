@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class MaterialReference extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function rpkps()
+    {
+        return $this->belongsTo(Rpkps::class);
+    }
 }

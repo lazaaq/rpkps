@@ -9,4 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class HeadOfStudyProgram extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function lecturer()
+    {
+        return $this->belongsTo(Lecturer::class);
+    }
+
+    public function studyProgram()
+    {
+        return $this->belongsTo(StudyProgram::class);
+    }
 }

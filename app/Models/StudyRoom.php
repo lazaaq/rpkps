@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class StudyRoom extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function weeklyLectures()
+    {
+        return $this->hasMany(WeeklyLecture::class);
+    }
 }

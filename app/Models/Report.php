@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Report extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function weeklyLecture()
+    {
+        return $this->belongsTo(WeeklyLecture::class);
+    }
 }
