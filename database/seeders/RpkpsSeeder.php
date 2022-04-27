@@ -38,6 +38,7 @@ class RpkpsSeeder extends Seeder
         }
 
         StudyMaterial::factory()->count(20)->create();
+        
 
     }
 }
