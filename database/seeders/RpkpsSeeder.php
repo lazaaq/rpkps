@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\CplCourse;
 use App\Models\Cpmk;
 use App\Models\CpmkCplCourse;
+use App\Models\MaterialReference;
 use App\Models\Rpkps;
 use App\Models\StudyMaterial;
 use App\Models\Task;
@@ -37,8 +38,14 @@ class RpkpsSeeder extends Seeder
             ]);
         }
 
-        StudyMaterial::factory()->count(20)->create();
-        
+        for($i=1; $i<=$constant; $i++) {
+            StudyMaterial::factory()->count(2)->create([
+                'rpkps_id' => $i
+            ]);
+            MaterialReference::factory()->count(2)->create([
+                'rpkps_id' => $i
+            ]);
+        }
 
     }
 }
