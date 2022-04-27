@@ -6,6 +6,7 @@ use App\Models\CplCourse;
 use App\Models\Cpmk;
 use App\Models\CpmkCplCourse;
 use App\Models\Rpkps;
+use App\Models\Task;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,8 +28,11 @@ class RpkpsSeeder extends Seeder
 
             Cpmk::factory()->count(1)->create();
 
-            CpmkCplCourse::factory()->count(1)->create([
+            $cpmkCplCourse = CpmkCplCourse::factory()->count(1)->create([
                 'rpkps_id' => $i,
+            ]);
+            Task::factory()->count(5)->create([
+                'cpmk_cpl_course_id' => $cpmkCplCourse[0]->id,
             ]);
         }
     }

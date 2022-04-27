@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cpmk_cpl_courses', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('rpkps_id');
-            $table->unsignedBigInteger('cpl_course_id');
-            $table->unsignedBigInteger('cpmk_id');
+            $table->unsignedBigInteger('cpmk_cpl_course_id');
+            $table->string('name');
+            $table->integer('value');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cpmk_cpl_courses');
+        Schema::dropIfExists('tasks');
     }
 };
