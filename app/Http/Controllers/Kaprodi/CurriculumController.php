@@ -19,11 +19,7 @@ class CurriculumController extends Controller
         } else {
             $message = 'Curriculum not found';
         }
-        return response()->json([
-            'message' => $message,
-            'statusCode' => $statusCode,
-            'data' => $curriculum
-        ], $statusCode);
+        return responseAPI($message, $statusCode, $curriculum);
     }
 
     public function store(Request $request) {
@@ -38,10 +34,7 @@ class CurriculumController extends Controller
         ]);
         if ($validator->fails()) {
             $message = 'Validation failed';
-            return response()->json([
-                'message' => $message,
-                'statusCode' => $statusCode
-            ], $statusCode);
+            return responseAPI($message, $statusCode);
         }
         
         // store data
@@ -52,11 +45,7 @@ class CurriculumController extends Controller
         } else {
             $message = 'failed create Curriculum';
         }
-        return response()->json([
-            'message' => $message,
-            'statusCode' => $statusCode,
-            'data' => $curriculum
-        ], $statusCode);
+        return responseAPI($message, $statusCode, $curriculum);
     }
 
     public function update(Request $request, $id) {
@@ -71,10 +60,7 @@ class CurriculumController extends Controller
         ]);
         if ($validator->fails()) {
             $message = 'Validation failed';
-            return response()->json([
-                'message' => $message,
-                'statusCode' => $statusCode
-            ], $statusCode);
+            return responseAPI($message, $statusCode);
         }
 
         // update data
@@ -90,10 +76,6 @@ class CurriculumController extends Controller
         } else {
             $message = 'curriculum not found';
         }
-        return response()->json([
-            'message' => $message,
-            'statusCode' => $statusCode,
-            'data' => $curriculum
-        ], $statusCode);
+        return responseAPI($message, $statusCode, $curriculum);
     }
 }
