@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Kaprodi\CurriculumController;
 use App\Http\Controllers\Kaprodi\GraduateProfileController;
+use App\Http\Controllers\Kaprodi\LearningGoalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,11 @@ Route::prefix('kaprodi')->group(function () {
     });
     Route::prefix('profil-lulusan')->group(function () {
         Route::get('', [GraduateProfileController::class, 'index']);
+    });
+    Route::prefix('capaian-pembelajaran')->group(function () {
+        Route::get('', [LearningGoalController::class, 'index']);
+        Route::post('', [LearningGoalController::class, 'store']);
+        Route::put('{id}', [LearningGoalController::class, 'update']);
+        Route::delete('{id}', [LearningGoalController::class, 'destroy']);
     });
 });

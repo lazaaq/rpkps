@@ -10,6 +10,8 @@ class LearningGoal extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = ['code', 'component', 'value'];
+
     public function graduateProfileLearningGoals()
     {
         return $this->hasMany(GraduateProfileLearningGoal::class);
