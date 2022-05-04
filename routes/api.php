@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Kaprodi\CurriculumController;
 use App\Http\Controllers\Kaprodi\GraduateProfileController;
+use App\Http\Controllers\Kaprodi\GraduateProfileLearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +32,9 @@ Route::prefix('kaprodi')->group(function () {
         Route::post('', [LearningGoalController::class, 'store']);
         Route::put('{id}', [LearningGoalController::class, 'update']);
         Route::delete('{id}', [LearningGoalController::class, 'destroy']);
+    });
+    Route::prefix('profil-cpl')->group(function () {
+        Route::get('', [GraduateProfileLearningGoalController::class, 'index']);
+        Route::put('', [GraduateProfileLearningGoalController::class, 'update']);
     });
 });
