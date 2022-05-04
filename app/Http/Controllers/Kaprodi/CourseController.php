@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $courses) = initAPI();
 
         $courses = Course::all();
         if ($courses) {
-            $message = 'Courses retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
+            $statusCode = 200;
         } else {
-            $message = 'Courses not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $courses);
     }

@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 class GraduateProfileController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $graduateProfile) = initAPI();
+
         $graduateProfile = GraduateProfile::all();
         if ($graduateProfile) {
-            $message = 'Graduate Profile retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
             $statusCode = 200;
         } else {
-            $message = 'Graduate Profile not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $graduateProfile);
     }

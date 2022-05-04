@@ -10,21 +10,20 @@ use Illuminate\Support\Facades\Validator;
 class CurriculumController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $curriculum) = initAPI();
+
         $curriculum = Curriculum::all();
         if ($curriculum) {
-            $message = 'Curriculum retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
             $statusCode = 200;
         } else {
-            $message = 'Curriculum not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $curriculum);
     }
 
     public function store(Request $request) {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $curriculum) = initAPI();
 
         // validation
         $validator = Validator::make($request->all(), [
@@ -33,24 +32,23 @@ class CurriculumController extends Controller
             'status' => 'required',
         ]);
         if ($validator->fails()) {
-            $message = 'Validation failed';
+            $message = config('constants.response.message.validation.failed');
             return responseAPI($message, $statusCode);
         }
         
         // store data
         $curriculum = Curriculum::create($request->all());
         if ($curriculum) {
-            $message = 'Curriculum created successfully';
+            $message = config('constants.response.message.success.create');
             $statusCode = 200;
         } else {
-            $message = 'failed create Curriculum';
+            $message = config('constants.response.message.failed.create');
         }
         return responseAPI($message, $statusCode, $curriculum);
     }
 
     public function update(Request $request, $id) {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $curriculum) = initAPI();
 
         // validation
         $validator = Validator::make($request->all(), [
@@ -59,7 +57,7 @@ class CurriculumController extends Controller
             'status' => 'required',
         ]);
         if ($validator->fails()) {
-            $message = 'Validation failed';
+            $message = config('constants.response.message.validation.failed');
             return responseAPI($message, $statusCode);
         }
 
@@ -68,13 +66,13 @@ class CurriculumController extends Controller
         if ($curriculum) {
             $updateCurriculum = $curriculum->update($request->all());
             if($updateCurriculum) {
-                $message = 'Curriculum updated successfully';
+                $message = config('constants.response.message.success.update');
                 $statusCode = 200;
             } else {
-                $message = 'failed update Curriculum';
+                $message = config('constants.response.message.failed.update');
             }
         } else {
-            $message = 'curriculum not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $curriculum);
     }

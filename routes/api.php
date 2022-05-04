@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// KAPRODI
 Route::prefix('kaprodi')->group(function () {
     Route::prefix('kurikulum')->group(function () {
         Route::get('', [CurriculumController::class, 'index']);
@@ -29,13 +30,13 @@ Route::prefix('kaprodi')->group(function () {
     Route::prefix('profil-lulusan')->group(function () {
         Route::get('', [GraduateProfileController::class, 'index']);
     });
-    Route::prefix('capaian-pembelajaran')->group(function () {
+    Route::prefix('cpl')->group(function () {
         Route::get('', [LearningGoalController::class, 'index']);
         Route::post('', [LearningGoalController::class, 'store']);
         Route::put('{id}', [LearningGoalController::class, 'update']);
         Route::delete('{id}', [LearningGoalController::class, 'destroy']);
     });
-    Route::prefix('profil-cpl')->group(function () {
+    Route::prefix('cpl-profil-lulusan')->group(function () {
         Route::get('', [GraduateProfileLearningGoalController::class, 'index']);
         Route::put('', [GraduateProfileLearningGoalController::class, 'update']);
     });

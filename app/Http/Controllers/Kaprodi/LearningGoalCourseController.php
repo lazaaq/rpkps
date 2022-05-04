@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\DB;
 class LearningGoalCourseController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $learningGoalCourse) = initAPI();
 
         $learningGoalCourse = LearningGoalCourse::all();
         $learningGoalCourse = $learningGoalCourse->sortBy('course_id')->groupBy('course_id');
@@ -19,18 +18,17 @@ class LearningGoalCourseController extends Controller
             $learningGoalCourse[$key] = $value->sortBy('learning_goal_id');
         }
         if($learningGoalCourse) {
-            $message = 'Learning Goal Course retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
             $statusCode = 200;
         } else {
-            $message = 'Learning Goal Course not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $learningGoalCourse);
     }
 
     public function update(Request $request) {
-        $message = '';
-        $statusCode = 500;
-        $data = null;
+        list($message, $statusCode, $learningGoalCourse) = initAPI();
+
         $statusTransaction = true;
         
         $count = count($request->all());
@@ -48,28 +46,29 @@ class LearningGoalCourseController extends Controller
                     } else if ($value['status'] === 'delete') {
                         $learningGoalCourse->delete();
                     } else {
-                        $message = 'Invalid status';
+                        $message = config('constants.response.message.status.invalid');
                         $statusTransaction = false;
                         break;
                     }
                 } else {
-                    $message = 'Learning Goal Course with id ' . $key . ' not found';
+                    $message = config('constants.response.message.failed.getOne', ['id' => $key]);
                     $statusTransaction = false;
                     break;
                 }
             }
             if ($statusTransaction) {
                 DB::commit();
-                $message = 'Learning Goal Course updated successfully';
-                $data = LearningGoalCourse::all();
+                $message = config('constants.response.message.success.update');
+                $statusCode = 200;
+                $learningGoalCourse = LearningGoalCourse::all();
             } else {
                 DB::rollBack();
-                $message = 'Failed to update using database transaction. There is some invalid data.';
+                $message = config('constants.response.message.failed.transaction');
             }
         } else {
             $message = "Request is empty, there is no data to update";
             $message = 200;
         }
-        return responseAPI($message, $statusCode, $data);
+        return responseAPI($message, $statusCode, $learningGoalCourse);
     }
 }

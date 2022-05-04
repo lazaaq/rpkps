@@ -10,21 +10,21 @@ use Illuminate\Support\Facades\Validator;
 class LearningGoalController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $learningGoal) = initAPI();
+
         $learningGoal = LearningGoal::all();
         if ($learningGoal) {
-            $message = 'Learning Goal retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
             $statusCode = 200;
         } else {
-            $message = 'Learning Goal not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $learningGoal);
     }
 
     public function store(Request $request) {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $learningGoal) = initAPI();
+
         $validator = Validator::make($request->all(), [
             'code' => 'required',
             'component' => 'required',
@@ -36,17 +36,17 @@ class LearningGoalController extends Controller
         }
         $learningGoal = LearningGoal::create($request->all());
         if ($learningGoal) {
-            $message = 'Learning Goal created successfully';
+            $message = config('constants.response.message.success.create');
             $statusCode = 200;
         } else {
-            $message = 'Learning Goal not created';
+            $message = config('constants.response.message.failed.create');
         }
         return responseAPI($message, $statusCode, $learningGoal);
     }
 
     public function update(Request $request, $id) {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $learningGoal) = initAPI();
+
         $validator = Validator::make($request->all(), [
             'code' => 'required',
             'component' => 'required',
@@ -60,31 +60,31 @@ class LearningGoalController extends Controller
         if ($learningGoal) {
             $updateLearningGoal = $learningGoal->update($request->all());
             if($updateLearningGoal) {
-                $message = 'Learning Goal updated successfully';
+                $message = config('constants.response.message.success.update');
                 $statusCode = 200;
             } else {
-                $message = 'Learning Goal failed to update';
+                $message = config('constants.response.message.failed.update');
             }
         } else {
-            $message = 'Learning Goal not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $learningGoal);
     }
 
     public function destroy($id) {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $learningGoal) = initAPI();
+        
         $learningGoal = LearningGoal::find($id);
         if ($learningGoal) {
             $deleteLearningGoal = $learningGoal->delete();
             if($deleteLearningGoal) {
-                $message = 'Learning Goal deleted successfully';
+                $message = config('constants.response.message.success.delete');
                 $statusCode = 200;
             } else {
-                $message = 'Learning Goal failed to delete';
+                $message = config('constants.response.message.failed.delete');
             }
         } else {
-            $message = 'Learning Goal not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $learningGoal);
     }

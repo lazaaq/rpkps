@@ -10,23 +10,25 @@ use Illuminate\Support\Facades\DB;
 class GraduateProfileLearningGoalController extends Controller
 {
     public function index() {
-        $message = '';
-        $statusCode = 500;
+        list($message, $statusCode, $graduateProfileLearningGoal) = initAPI();
+
         $graduateProfileLearningGoal = GraduateProfileLearningGoal::all();
         $graduateProfileLearningGoal = $graduateProfileLearningGoal->sortBy('graduate_profile_id')->groupBy('graduate_profile_id');
+        foreach ($graduateProfileLearningGoal as $key => $value) {
+            $graduateProfileLearningGoal[$key] = $value->sortBy('learning_goal_id');
+        }
         if ($graduateProfileLearningGoal) {
-            $message = 'Graduate Profile Learning Goal retrieved successfully';
+            $message = config('constants.response.message.success.getAll');
             $statusCode = 200;
         } else {
-            $message = 'Graduate Profile Learning Goal not found';
+            $message = config('constants.response.message.failed.notFound');
         }
         return responseAPI($message, $statusCode, $graduateProfileLearningGoal);
     }
 
     public function update(Request $request) {
-        $message = '';
-        $statusCode = 500;
-        $data = null;
+        list($message, $statusCode, $graduateProfileLearningGoal) = initAPI();
+        
         $statusTransaction = true;
         
         $count = count($request->all());
@@ -43,28 +45,29 @@ class GraduateProfileLearningGoalController extends Controller
                     } else if ($value['status'] === 'delete') {
                         $graduateProfileLearningGoal->delete();
                     } else {
-                        $message = 'Invalid status';
+                        $message = config('constants.response.message.status.invalid');
                         $statusTransaction = false;
                         break;
                     }
                 } else {
-                    $message = 'Graduate Profile Learning Goal with id ' . $key . ' not found';
+                    $message = config('constants.response.message.failed.getOne', ['id' => $key]);
                     $statusTransaction = false;
                     break;
                 }
             }
             if ($statusTransaction) {
                 DB::commit();
-                $message = 'Graduate Profile Learning Goal updated successfully';
-                $data = GraduateProfileLearningGoal::all();
+                $message = config('constants.response.message.success.update');
+                $statusCode = 200;
+                $graduateProfileLearningGoal = GraduateProfileLearningGoal::all();
             } else {
                 DB::rollBack();
-                $message = 'Failed to update using database transaction. There is some invalid data.';
+                $message = config('constants.response.message.failed.transaction');
             }
         } else {
             $message = "Request is empty, there is no data to update";
             $message = 200;
         }
-        return responseAPI($message, $statusCode, $data);
+        return responseAPI($message, $statusCode, $graduateProfileLearningGoal);
     }
 }

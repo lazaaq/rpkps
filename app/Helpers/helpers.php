@@ -8,4 +8,8 @@ function responseAPI($message = 'Error Default', $statusCode = 500, $data = null
   ], $statusCode);
 }
 
+function initAPI($message = '', $statusCode = 500, $data = null) {
+  return array($message, $statusCode, $data);
+}
+
 ?>
