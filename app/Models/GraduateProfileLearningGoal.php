@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class GraduateProfileLearningGoal extends Model
 {
     use HasFactory, SoftDeletes;
+    
+    protected $fillable = ['learning_goal_id', 'graduate_profile_id'];
 
     public function graduateProfile()
     {

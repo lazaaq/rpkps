@@ -10,6 +10,8 @@ class LearningGoalCourse extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $fillable = ['course_id', 'learning_goal_id', 'percentage'];
+
     public function course()
     {
         return $this->belongsTo(Course::class);
