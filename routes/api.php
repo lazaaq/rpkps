@@ -6,6 +6,7 @@ use App\Http\Controllers\Kaprodi\GraduateProfileController;
 use App\Http\Controllers\Kaprodi\GraduateProfileLearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalCourseController;
+use App\Http\Controllers\Akademik\LecturerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,5 +47,14 @@ Route::prefix('kaprodi')->group(function () {
     Route::prefix('cpl-mata-kuliah')->group(function () {
         Route::get('', [LearningGoalCourseController::class, 'index']);
         Route::put('', [LearningGoalCourseController::class, 'update']);
+    });
+});
+
+// AKADEMIK
+Route::prefix('akademik')->group(function () {
+    Route::prefix('dosen')->group(function () {
+        Route::get('', [LecturerController::class, 'index']);
+        Route::post('', [LecturerController::class, 'store']);
+        Route::put('{id}', [LecturerController::class, 'update']);
     });
 });
