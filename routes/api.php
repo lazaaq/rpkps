@@ -7,6 +7,7 @@ use App\Http\Controllers\Kaprodi\GraduateProfileLearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalCourseController;
 use App\Http\Controllers\Dosen\RpkpsController;
+use App\Http\Controllers\Dosen\RpkpmController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -55,5 +56,9 @@ Route::prefix('dosen')->group(function () {
     Route::prefix('rpkps')->group(function () {
         Route::get('', [RpkpsController::class, 'index']);
         Route::get('{id}', [RpkpsController::class, 'show']);
+    });
+    Route::prefix('rpkpm')->group(function () {
+        Route::get('', [RpkpmController::class, 'index']);
+        Route::get('{id}', [RpkpmController::class, 'show']);
     });
 });
