@@ -27,4 +27,12 @@ class Lecturer extends Model
     public function rpkpsExpertiseCoordinator() {
         return $this->hasMany(Rpkps::class, 'expertise_coordinator', 'id');
     }
+
+    public function getPhotoAttribute($value) {
+        if ($value && strpos($value, 'http') !== 0) {
+            return env('ASSET_URL') . env('ASSET_LECTURER_PHOTO') . $value;
+        } else {
+            return $value;
+        }
+    }
 }

@@ -17,7 +17,7 @@ class LecturerFactory extends Factory
     public function definition()
     {
         return [
-            'photo' => 'default.jpg',
+            'photo' => 'default.png',
             'name' => $this->faker->word(),
             'nip' => $this->faker->numerify('############'),
             'email' => $this->faker->unique()->safeEmail(),
