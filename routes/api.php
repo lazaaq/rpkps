@@ -8,6 +8,7 @@ use App\Http\Controllers\Kaprodi\LearningGoalController;
 use App\Http\Controllers\Kaprodi\LearningGoalCourseController;
 use App\Http\Controllers\Akademik\LecturerController;
 use App\Http\Controllers\Akademik\HeadOfStudyProgramController;
+use App\Http\Controllers\Akademik\LecturerPlottingController;
 use App\Http\Controllers\Akademik\SemesterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -69,5 +70,10 @@ Route::prefix('akademik')->group(function () {
         Route::post('', [SemesterController::class, 'store']);
         Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses']);
         Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses']);
+    });
+    Route::prefix('plotting-dosen')->group(function () {
+        Route::get('', [LecturerPlottingController::class, 'index']);
+        Route::get('{id}', [LecturerPlottingController::class, 'show']);
+        Route::put('', [LecturerPlottingController::class, 'update']);
     });
 });
