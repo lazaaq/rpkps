@@ -17,6 +17,8 @@ use App\Http\Controllers\KurikulumController;
 // Route::get('/kurikulum', [KurikulumController::class, 'index']);
 // Route::get('/kurikulum/add', [KurikulumController::class, 'add']);
 // Route::post('/kurikulum/insert', [KurikulumController::class, 'insert']);
+// Login
+route::view('/login', 'v_login');
 
 // Kaprodi
 Route::get('/', function () {
