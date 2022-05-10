@@ -1,7 +1,7 @@
 @extends('layout.v_template')
 
 @section('title', 'Kurikulum Prodi Teknologi Rekayasa Perangkat')
-
+<!-- test -->
 @section('content')
 <div class="row">
     <div class="col-xs-12">
