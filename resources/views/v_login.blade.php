@@ -29,13 +29,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition login-page" style="background-color: #E3EAF3;">
+<body class="hold-transition login-page" style="background-color: #E3E8EF;">
     <div class="login-box">
         <div class="login-logo">
             <a href="{{asset('adminlte')}}/index2.html"><b>SIPENCAR</b>UGM</a>
         </div>
         <!-- /.login-logo -->
-        <div class="login-box-body">
+        <div class="login-box-body" style="box-shadow:4px 4px 12px rgba(0,0,0,0.15) ;">
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form action="{{asset('adminlte')}}/index2.html" method="post">
