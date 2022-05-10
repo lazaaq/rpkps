@@ -30,48 +30,50 @@
 </head>
 
 <body class="hold-transition login-page" style="background-color: #E3E8EF;">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{asset('adminlte')}}/index2.html"><b>SIPENCAR</b>UGM</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body" style="box-shadow:4px 4px 12px rgba(0,0,0,0.15) ;">
-            <p class="login-box-msg">Sign in to start your session</p>
-
-            <form action="{{asset('adminlte')}}/index2.html" method="post">
-                <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Masukkan Email">
-                    <i class="fa fa-envelope form-control-feedback"></i>
-                </div>
-                <div class="form-group has-feedback" style="margin-bottom: 4px;">
-                    <input type="password" class="form-control" placeholder="Masukkan Password">
-                    <i class="fa fa-eye form-control-feedback"></i>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"> Remember Me
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-xs-5 text-right" style="margin-top: 9px; margin: right 0px;">
-                        <a href="#">Lupa password?</a><br>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-xs-12" style="margin-top: 14px;">
-                        <button type="submit" style="background-color: #007BFF; color: white;" class="btn btn-primary btn-block">Login</button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-
-            <div class="social-auth-links text-center">
-                <p>- Atau login dengan -</p>
-                <a href="#" style="background-color: #EB5757; color: white;" class="btn btn-primary btn-block"><i class="fa fa-google-plus" style="margin-right: 6px;"></i>Google</a>
+    <div class="col-xs-6">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="{{asset('adminlte')}}/index2.html"><b>SIPENCAR</b>UGM</a>
             </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body" style="box-shadow:4px 4px 12px rgba(0,0,0,0.15) ;">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form action="{{asset('adminlte')}}/index2.html" method="post">
+                    <div class="form-group has-feedback">
+                        <input type="email" class="form-control" placeholder="Masukkan Email">
+                        <i class="fa fa-envelope form-control-feedback"></i>
+                    </div>
+                    <div class="form-group has-feedback" style="margin-bottom: 4px;">
+                        <input type="password" class="form-control" placeholder="Masukkan Password">
+                        <i class="fa fa-eye form-control-feedback"></i>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <div class="checkbox icheck">
+                                <label>
+                                    <input type="checkbox"> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 text-right" style="margin-top: 9px; margin: right 0px;">
+                            <a href="#">Lupa password?</a><br>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-xs-12" style="margin-top: 14px;">
+                            <button type="submit" style="background-color: #007BFF; color: white;" class="btn btn-primary btn-block">Login</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+                <div class="social-auth-links text-center">
+                    <p>- Atau login dengan -</p>
+                    <a href="#" style="background-color: #EB5757; color: white;" class="btn btn-primary btn-block"><i class="fa fa-google-plus" style="margin-right: 6px;"></i>Google</a>
+                </div>
+            </div>
+            <!-- /.login-box-body -->
         </div>
-        <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
 
