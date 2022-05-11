@@ -7,9 +7,9 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/editpemetaanprofil">
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Data</span>
+                <a href="/pemetaanprofil">
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-save" style="margin-right:10px;"></i><span>Simpan</span>
                     </button>
                 </a>
             </div>
@@ -31,33 +31,33 @@
                             <tr>
                                 <td>S1</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                                 <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S2</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                                 <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S3</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                                 <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S4</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                                 <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                     </table>

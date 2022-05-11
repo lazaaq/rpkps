@@ -28,6 +28,7 @@ route::view('/addkurikulum', 'kaprodi.kurikulum.v_addkurikulum');
 route::view('/editkurikulum', 'kaprodi.kurikulum.v_editkurikulum');
 route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
+route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 route::view('/cpl', 'kaprodi.cpl.v_cpl');
 route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
 route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
