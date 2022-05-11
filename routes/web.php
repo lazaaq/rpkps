@@ -24,6 +24,8 @@ route::view('/login', 'v_login');
 Route::get('/', function () {
     return view('kaprodi.kurikulum.v_kurikulum');
 });
+route::view('/addkurikulum', 'kaprodi.kurikulum.v_addkurikulum');
+route::view('/editkurikulum', 'kaprodi.kurikulum.v_editkurikulum');
 route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 route::view('/cpl', 'kaprodi.cpl.v_cpl');

@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/kurikulum/add">
+                <a href="/addkurikulum">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Kurikulum</span>
                     </button>

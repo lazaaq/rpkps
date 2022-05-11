@@ -9,7 +9,7 @@
         <div class="col-xs-6">
             <div class="box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Tambah Data</h3>
+                    <h3 class="box-title">Edit Data</h3>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="tahun" class="form-control" value="{{ old('tahun') }}">
+                        <input name="prodi" class="form-control" value="{{ old('prodi') }}">
                         <div class="text-danger">
                             @error('prodi')
                             {{ $message }}
