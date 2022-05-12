@@ -68,6 +68,9 @@
                                 <td>P</td>
                                 <td>PL2AA, PL2BB</td>
                             </tr>
+                            <tr>
+                                <td><input type="checkbox" value=""></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
