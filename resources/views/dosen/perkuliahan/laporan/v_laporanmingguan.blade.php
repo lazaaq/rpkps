@@ -18,7 +18,7 @@
                     <h5 align="center"><b> Laporan Mingguan Pelaksanaan Perkuliahan <br> Semester Genap 2021/2022</b></h5>
                     <br>
                     <div>
-                        <a href="">
+                        <a href="/formTambahLaporan">
                             <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                                 <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Buat Laporan</span>
                             </button>
@@ -50,11 +50,11 @@
                                 <td width="50px">1</td>
                                 <td width="200px">Jumat, 11 Februari 2022 </td>
                                 <td width="200px">12:15 - 15:55 WIB</td>
-                                <td width="200px"></td>
-                                <td width="200px"></td>
-                                <td width="200px"></td>
-                                <td width="200px"></td>
-                                <td width="200px"></td> 
+                                <td width="200px">Pengantar Keamanan Informasi</td>
+                                <td style="word-wrap: break-word;min-width: 300px; white-space: normal;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book.</td>
+                                <td style="word-wrap: break-word;min-width: 300px; white-space: normal;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </td>
+                                <td style="word-wrap: break-word;min-width: 300px; white-space: normal;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </td>
+                                <td style="word-wrap: break-word;min-width: 300px; white-space: normal;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. Remaining essentially unchanged. It was popularised in the 1960s simply dummy text printing standard dummy text.</td> 
                                 <td width="200px">
                                     <a href="" class="btn btn-warning btn-sm ">
                                                 <span class="fa fa-fw fa-edit"></span>

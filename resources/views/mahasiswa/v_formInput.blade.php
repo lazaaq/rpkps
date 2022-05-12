@@ -78,9 +78,33 @@
         <div class="box">
             <div class="box-header">  
             </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <p>1. Apakah materi pembelajaran yang diberikan sesuai dengan RKPM?</p>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                            Ya
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Tidak
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        </div> 
+
+        <div class="box">
+            <div class="box-header">  
+            </div>
             <div class="box-body">
                 <div class="form-group">
-                <p>1. Apakah materi pembelajaran yang diberikan sesuai dengan RKPM?</p>
+                <p>3. Apakah bentuk dan metode pembelajaran yang digunakan sesuai dengan RKPM?</p>
                     <div class="radio">
                         <label>
                         <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
@@ -96,9 +120,10 @@
                     </div>
                 </div>
             </div>
+        </div>  
         </div>
-
-
     </div>
 </div>
+
+
 @endsection
