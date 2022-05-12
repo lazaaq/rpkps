@@ -46,3 +46,4 @@ route::view('/rpkps', 'dosen.rpkps.v_rpkps');
 route::view('/pelaksanaankuliah', 'dosen.perkuliahan.pelaksanaan.v_pelaksanaankuliah');
 route::view('/laporan', 'dosen.perkuliahan.laporan.v_laporan');
 route::view('/laporanmingguan', 'dosen.perkuliahan.laporan.v_laporanmingguan');
+route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');

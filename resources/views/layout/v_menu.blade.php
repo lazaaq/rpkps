@@ -68,6 +68,11 @@
             <i class="fa fa-list-ul"></i> <span>RPKPS</span>
         </a>
     </li>
+    <li class="{{ request() -> is('rpkpm') ? 'active' : '' }}">
+        <a href="/rpkpm">
+            <i class="fa fa-list-ul"></i> <span>RPKPM</span>
+        </a>
+    </li>
     <li class="{{ request()->is('pelaksanaankuliah', 'laporan') ? 'active treeview' : 'treeview' }} " style="height: auto;">
         <a href="#">
             <i class="px-nav-icon fa fa-calendar"></i> <span>Perkuliahan (dosen)</span>
