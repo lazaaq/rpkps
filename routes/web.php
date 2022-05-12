@@ -30,7 +30,10 @@ route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 route::view('/cpl', 'kaprodi.cpl.v_cpl');
+route::view('/addcpl', 'kaprodi.cpl.v_addcpl');
+route::view('/editcpl', 'kaprodi.cpl.v_editcpl');
 route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
+route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
 
 // Akademik
