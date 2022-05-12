@@ -32,14 +32,26 @@
                                 <td>Kurikulum MBKM 2021</td>
                                 <td>2021</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editkurikulum">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>Kurikulum 2021</td>
                                 <td>2021</td>
                                 <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editkurikulum">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

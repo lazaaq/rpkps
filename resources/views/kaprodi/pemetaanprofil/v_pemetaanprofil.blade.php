@@ -34,7 +34,13 @@
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td rowspan="4" style="vertical-align: middle; text-align: center;">
+                                    <a href="/editpemetaanprofil">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>S2</td>
@@ -42,7 +48,6 @@
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S3</td>
@@ -50,7 +55,6 @@
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S4</td>
@@ -58,7 +62,6 @@
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
                                 <td><input type="checkbox" value="" disabled></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                     </table>
                 </div>

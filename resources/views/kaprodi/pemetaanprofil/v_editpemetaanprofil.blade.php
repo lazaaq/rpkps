@@ -23,7 +23,6 @@
                                 <th width="100px">Perekayasa Perangkat Lunak</th>
                                 <th width="100px">Administrator Basis Data</th>
                                 <th width="100px">Pengembangan Game dan Multimedia</th>
-                                <th width="100px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +33,6 @@
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S2</td>
@@ -42,7 +40,6 @@
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S3</td>
@@ -50,7 +47,6 @@
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                             <tr>
                                 <td>S4</td>
@@ -58,7 +54,6 @@
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
                                 <td><input type="checkbox" value=""></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
                             </tr>
                     </table>
                 </div>
