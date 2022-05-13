@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/kurikulum/add">
+                <a href="/addkurikulum">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Kurikulum</span>
                     </button>
@@ -32,14 +32,26 @@
                                 <td>Kurikulum MBKM 2021</td>
                                 <td>2021</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editkurikulum">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>Kurikulum 2021</td>
                                 <td>2021</td>
                                 <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editkurikulum">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

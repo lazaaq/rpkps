@@ -7,9 +7,9 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/">
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Data</span>
+                <a href="/pemetaancpl">
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-save" style="margin-right:10px;"></i><span>Simpan</span>
                     </button>
                 </a>
             </div>

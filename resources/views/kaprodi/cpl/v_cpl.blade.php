@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/kurikulum/add">
+                <a href="/addcpl">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah CPL</span>
                     </button>
@@ -29,21 +29,39 @@
                                 <td>S1</td>
                                 <td>Sikap</td>
                                 <td>Bertakwa kepada Tuhan Yang Maha Esa dan mampu menunjukkan sikap religious;</td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editcpl">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>S2</td>
                                 <td>Sikap</td>
                                 <td>Menjunjung tinggi nilai kemanusiaan dalam menjalankan tugas berdasarkan
                                     agama, moral, dan etika;</td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editcpl">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>S3</td>
                                 <td>Sikap</td>
                                 <td>Berkontribusi dalam peningkatan mutu kehidupan bermasyarakat, berbangsa,
                                     bernegara, dan kemajuan peradaban berdasarkan Pancasila;</td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>
+                                    <a href="/editcpl">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
