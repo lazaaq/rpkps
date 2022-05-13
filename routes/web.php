@@ -40,9 +40,12 @@ route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 //route mahasiswa
 route::view('/pelaksanaanPerkuliahan', 'mahasiswa.v_pelaksanaanPerkuliahan');
 route::view('/pelaksanaanMingguan', 'mahasiswa.v_perkuliahanMingguan');
+route::view('/formInput', 'mahasiswa.v_formInput');
 
 // Dosen
 route::view('/rpkps', 'dosen.rpkps.v_rpkps');
 route::view('/pelaksanaankuliah', 'dosen.perkuliahan.pelaksanaan.v_pelaksanaankuliah');
+route::view('/pkuliahmingguan', 'dosen.perkuliahan.pelaksanaan.v_pkuliahmingguan');
 route::view('/laporan', 'dosen.perkuliahan.laporan.v_laporan');
 route::view('/laporanmingguan', 'dosen.perkuliahan.laporan.v_laporanmingguan');
+route::view('/formTambahLaporan', 'dosen.perkuliahan.laporan.v_form_tambahdata');
