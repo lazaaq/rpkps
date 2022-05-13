@@ -56,4 +56,5 @@ route::view('/pelaksanaankuliah', 'dosen.perkuliahan.pelaksanaan.v_pelaksanaanku
 route::view('/pkuliahmingguan', 'dosen.perkuliahan.pelaksanaan.v_pkuliahmingguan');
 route::view('/laporan', 'dosen.perkuliahan.laporan.v_laporan');
 route::view('/laporanmingguan', 'dosen.perkuliahan.laporan.v_laporanmingguan');
+route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');
 route::view('/formTambahLaporan', 'dosen.perkuliahan.laporan.v_form_tambahdata');
