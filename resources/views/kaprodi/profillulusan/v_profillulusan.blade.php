@@ -20,27 +20,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($graduateProfile as $item)
                             <tr>
-                                <td>{{$no++}}</td>
-                                <td>Analis Sistem (System Analyst)</td>
-                                <td>Orang yang mampu menganalisis dan merancang perangkat lunak sesuai kebutuhan. [SKKNI-2017-044]</td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->qualification }}</td>
                             </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Perekayasa Perangkat Lunak (Software Engineer)</td>
-                                <td>Orang yang mampu mengembangkan (Programmer), menguji dan memvalidasi perangkat lunak. [SKKNI-2016-282] [SKKNI-2017-047]</td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Administrator Basis Data</td>
-                                <td>Orang yang mampu mendesain, mengimpmenetasikan, dan mengelola basis data. [SKKNI-2017-044]</td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Pengembang Game dan Multimedia</td>
-                                <td>Orang yang mampu mengembangkan produk game dan multimedia.[SKKNI-2015-458]</td>
-                            </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

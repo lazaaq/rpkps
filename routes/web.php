@@ -41,9 +41,9 @@ Route::prefix('kaprodi')->group(function () {
         Route::get('{id}/edit', [CurriculumController::class, 'edit'])->name('kaprodi.kurikulum.edit'); // kaprodi.kurikulum.v_editkurikulum
         Route::put('{id}', [CurriculumController::class, 'update'])->name('kaprodi.kurikulum.update');
     });
-    // Route::prefix('profil-lulusan')->group(function () {
-    //     Route::get('', [GraduateProfileController::class, 'index']);
-    // });
+    Route::prefix('profil-lulusan')->group(function () {
+        Route::get('', [GraduateProfileController::class, 'index']); // kaprodi.profillulusan.v_profillulusan
+    });
     // Route::prefix('cpl')->group(function () {
     //     Route::get('', [LearningGoalController::class, 'index']);
     //     Route::post('', [LearningGoalController::class, 'store']);
@@ -103,7 +103,7 @@ Route::prefix('kaprodi')->group(function () {
 Route::get('/', function () {
     return 'Index Page';
 });
-route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
+// route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 route::view('/cpl', 'kaprodi.cpl.v_cpl');
