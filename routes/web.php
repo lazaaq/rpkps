@@ -42,14 +42,16 @@ Route::prefix('kaprodi')->group(function () {
         Route::put('{id}', [CurriculumController::class, 'update'])->name('kaprodi.kurikulum.update');
     });
     Route::prefix('profil-lulusan')->group(function () {
-        Route::get('', [GraduateProfileController::class, 'index']); // kaprodi.profillulusan.v_profillulusan
+        Route::get('', [GraduateProfileController::class, 'index'])->name('kaprodi.profil-lulusan.index'); // kaprodi.profillulusan.v_profillulusan
     });
-    // Route::prefix('cpl')->group(function () {
-    //     Route::get('', [LearningGoalController::class, 'index']);
-    //     Route::post('', [LearningGoalController::class, 'store']);
-    //     Route::put('{id}', [LearningGoalController::class, 'update']);
-    //     Route::delete('{id}', [LearningGoalController::class, 'destroy']);
-    // });
+    Route::prefix('cpl')->group(function () {
+        Route::get('', [LearningGoalController::class, 'index'])->name('kaprodi.cpl.index'); // kaprodi.cpl.v_cpl
+        Route::get('create', [LearningGoalController::class, 'create'])->name('kaprodi.cpl.create'); // kaprodi.cpl.v_addcpl
+        Route::post('', [LearningGoalController::class, 'store'])->name('kaprodi.cpl.store'); 
+        Route::get('{id}/edit', [LearningGoalController::class, 'edit'])->name('kaprodi.cpl.edit'); // kaprodi.cpl.v_editcpl
+        Route::put('{id}', [LearningGoalController::class, 'update'])->name('kaprodi.cpl.update');
+        Route::delete('{id}', [LearningGoalController::class, 'destroy'])->name('kaprodi.cpl.delete');
+    });
     // Route::prefix('cpl-profil-lulusan')->group(function () {
     //     Route::get('', [GraduateProfileLearningGoalController::class, 'index']);
     //     Route::put('', [GraduateProfileLearningGoalController::class, 'update']);
@@ -103,12 +105,8 @@ Route::prefix('kaprodi')->group(function () {
 Route::get('/', function () {
     return 'Index Page';
 });
-// route::view('/profillulusan', 'kaprodi.profillulusan.v_profillulusan');
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
-route::view('/cpl', 'kaprodi.cpl.v_cpl');
-route::view('/addcpl', 'kaprodi.cpl.v_addcpl');
-route::view('/editcpl', 'kaprodi.cpl.v_editcpl');
 route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
 route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');

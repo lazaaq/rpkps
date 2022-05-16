@@ -6,19 +6,19 @@
             <i class="fa fa-list-ul"></i> <span>Kurikulum</span>
         </a>
     </li>
-    <li class="{{ request() -> is('profillulusan') ? 'active' : '' }}">
-        <a href="/profillulusan">
+    <li class="{{ request() -> is('kaprodi/profil-lulusan') ? 'active' : '' }}">
+        <a href="/kaprodi/profil-lulusan">
             <i class="fa fa-graduation-cap"></i> <span>Profil Lulusan</span>
+        </a>
+    </li>
+    <li class="{{ request() -> is('kaprodi/cpl') ? 'active' : '' }}">
+        <a href="/kaprodi/cpl">
+            <i class="fa fa-file-text"></i> <span>CPL</span>
         </a>
     </li>
     <li class="{{ request() -> is('pemetaanprofil') ? 'active' : '' }}">
         <a href="/pemetaanprofil">
             <i class="fa fa-th"></i> <span>Pemetaan Profil Lulusan</span>
-        </a>
-    </li>
-    <li class="{{ request() -> is('cpl') ? 'active' : '' }}">
-        <a href="/cpl">
-            <i class="fa fa-file-text"></i> <span>CPL</span>
         </a>
     </li>
     <li class="{{ request() -> is('pemetaancpl') ? 'active' : '' }}">
