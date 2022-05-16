@@ -10,21 +10,15 @@ use Illuminate\Support\Facades\Validator;
 class CurriculumController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $curriculum) = initAPI();
+        $curriculums = Curriculum::all();
+        return view('kaprodi.kurikulum.v_kurikulum', compact('curriculums'));
+    }
 
-        $curriculum = Curriculum::all();
-        if ($curriculum) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = 200;
-        } else {
-            $message = config('constants.response.message.failed.notFound');
-        }
-        return responseAPI($message, $statusCode, $curriculum);
+    public function create() {
+        return view('kaprodi.kurikulum.v_addkurikulum');
     }
 
     public function store(Request $request) {
-        list($message, $statusCode, $curriculum) = initAPI();
-
         // validation
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -32,24 +26,23 @@ class CurriculumController extends Controller
             'status' => 'required',
         ]);
         if ($validator->fails()) {
-            $message = config('constants.response.message.validation.failed');
-            return responseAPI($message, $statusCode);
+            return config('constants.response.message.validation.failed');
         }
         
         // store data
         $curriculum = Curriculum::create($request->all());
-        if ($curriculum) {
-            $message = config('constants.response.message.success.create');
-            $statusCode = 200;
-        } else {
-            $message = config('constants.response.message.failed.create');
+        if (!$curriculum) {
+            return config('constants.response.message.failed.create');
         }
-        return responseAPI($message, $statusCode, $curriculum);
+        return redirect()->route('kaprodi.kurikulum.index');
+    }
+
+    public function edit($id) {
+        $curriculum = Curriculum::find($id);
+        return view('kaprodi.kurikulum.v_editkurikulum', compact('curriculum'));
     }
 
     public function update(Request $request, $id) {
-        list($message, $statusCode, $curriculum) = initAPI();
-
         // validation
         $validator = Validator::make($request->all(), [
             'name' => 'required',
@@ -57,23 +50,19 @@ class CurriculumController extends Controller
             'status' => 'required',
         ]);
         if ($validator->fails()) {
-            $message = config('constants.response.message.validation.failed');
-            return responseAPI($message, $statusCode);
+            return config('constants.response.message.validation.failed');
         }
 
         // update data
         $curriculum = Curriculum::find($id);
         if ($curriculum) {
             $updateCurriculum = $curriculum->update($request->all());
-            if($updateCurriculum) {
-                $message = config('constants.response.message.success.update');
-                $statusCode = 200;
-            } else {
-                $message = config('constants.response.message.failed.update');
+            if(!$updateCurriculum) {
+                return config('constants.response.message.failed.update');
             }
         } else {
-            $message = config('constants.response.message.failed.notFound');
+            return config('constants.response.message.failed.notFound');
         }
-        return responseAPI($message, $statusCode, $curriculum);
+        return redirect()->route('kaprodi.kurikulum.index');
     }
 }

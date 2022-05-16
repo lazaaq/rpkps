@@ -1,8 +1,8 @@
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
-    <li class="{{ request() -> is('/') ? 'active' : '' }}">
-        <a href="/">
+    <li class="{{ request() -> is('kaprodi/kurikulum') ? 'active' : '' }}">
+        <a href="/kaprodi/kurikulum">
             <i class="fa fa-list-ul"></i> <span>Kurikulum</span>
         </a>
     </li>
