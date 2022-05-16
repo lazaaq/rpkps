@@ -17,6 +17,8 @@ return [
                 'delete' => 'Failed to delete data',
                 'notFound' => 'Data not found',
                 'transaction' => 'Failed to update using database transaction. There is some invalid data.',
+                'uploadImage' => 'Failed to upload image',
+                'deleteImage' => 'Failed to delete image',
             ],
             'validation' => [
                 'failed' => 'Validation failed',

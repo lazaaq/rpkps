@@ -9,6 +9,8 @@ class Semester extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'start_date', 'end_date', 'active'];
+
     public function courses()
     {
         return $this->hasMany(Course::class);

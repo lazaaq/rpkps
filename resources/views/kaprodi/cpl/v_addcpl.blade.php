@@ -1,6 +1,6 @@
 @extends('layout.v_template')
 
-@section('title', 'Kurikulum Prodi Teknologi Rekayasa Perangkat')
+@section('title', 'Capaian Pembelajaran Lulusan')
 
 @section('content')
 <form action="/kurikulum/insert" method="POST" enctype="multipart/form-data">
@@ -13,8 +13,8 @@
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label>Nama Kurikulum</label>
-                        <input name="nama_kaprodi" class="form-control" value="{{ old('nama_kaprodi') }}">
+                        <label>Kode CPL</label>
+                        <input name="kode_cpl" class="form-control" value="{{ old('kode_cpl') }}">
                         <div class="text-danger">
                             @error('nama_kaprodi')
                             {{ $message }}
@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="tahun" class="form-control" value="{{ old('tahun') }}">
+                        <input name="komponen" class="form-control" value="{{ old('komponen') }}">
                         <div class="text-danger">
                             @error('prodi')
                             {{ $message }}
@@ -31,23 +31,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Status</label>
-                        <select class="form-control" name="status" required>
-                            <option selected="selected">--Pilih Status--</option>
-                            <option value="">Aktif</option>
-                            <option value="">Tidak</option>
-                            <div class="text-danger">
-                                @error('prodi')
-                                {{ $message }}
-                                @enderror
-                            </div>
-                        </select>
-                        <!-- <div class="form-group">
-                        <label>Foto</label>
-                        <input type="file" name="foto_kaprodi" class="form-control"> -->
+                        <label>Nilai</label>
+                        <input name="nilai" class="form-control" value="{{ old('nilai') }}">
+                        <div class="text-danger">
+                            @error('prodi')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <a href="/">
+                        <a href="/cpl">
                             <button type="button" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
                         </a>
                         <a href="">
