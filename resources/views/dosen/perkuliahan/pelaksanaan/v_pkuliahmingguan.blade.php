@@ -9,7 +9,7 @@
             <div class="box-header with-border">
                 <div>
                     <h4><b>SVPL214402 Proyek Aplikasi Dasar 2</b></h4>
-                    <label class="control-label">Dosen :</label><span> Divi Galih Prasetyo Putri, S.Kom., M.Kom. </span>
+                    <label class="control-label">Program Studi :</label><span> Teknologi Rekayasa Perangkat Lunak </span>
                 </div>
             </div>
             <div class="box-body">
@@ -22,7 +22,7 @@
                                 <th>Mulai</th>
                                 <th>Selesai</th>
                                 <th>Ruang</th>
-                                <th>Materi</th>
+                                <th>Hasil</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -33,9 +33,11 @@
                                 <td width="200px">12:15</td>
                                 <td width="200px">15:55</td>
                                 <td width="200px">D.TEDI DARING 10</td>
-                                <td width="200px"></td> 
                                 <td width="200px">
-                                    <a href="/formInput" class="btn btn-primary btn-sm ">
+                                    <a href="" class="btn btn-success btn-xs">Lihat</a>
+                                </td> 
+                                <td width="200px">
+                                    <a href="/formInput" class="btn btn-primary btn-sm">
                                                 <span class="icon fa fa-arrow-right"></span>
                                     </a>
                                 </td>

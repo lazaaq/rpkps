@@ -7,9 +7,9 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/editpemetaanprofil">
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Data</span>
+                <a href="/pemetaanprofil">
+                    <button type="button" class="btn btn-success">
+                        <i class="fa fa-save" style="margin-right:10px;"></i><span>Simpan</span>
                     </button>
                 </a>
             </div>
@@ -23,7 +23,6 @@
                                 <th width="100px">Perekayasa Perangkat Lunak</th>
                                 <th width="100px">Administrator Basis Data</th>
                                 <th width="100px">Pengembangan Game dan Multimedia</th>
-                                <th width="100px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,37 +30,30 @@
                             <tr>
                                 <td>S1</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td rowspan="4" style="vertical-align: middle; text-align: center;">
-                                    <a href="/editpemetaanprofil">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
-                                </td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                             </tr>
                             <tr>
                                 <td>S2</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                             </tr>
                             <tr>
                                 <td>S3</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                             </tr>
                             <tr>
                                 <td>S4</td>
                                 <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
+                                <td><input type="checkbox" value=""></td>
                             </tr>
                     </table>
                 </div>
