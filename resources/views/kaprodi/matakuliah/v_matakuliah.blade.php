@@ -30,22 +30,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($courses as $item)
                             <tr>
-                                <td>{{$no++}}</td>
-                                <td>V3KI3103</td>
-                                <td>Keamanan Sistem Informasi</td>
-                                <td>2</td>
-                                <td width="40px">90</td>
-                                <td width="40px">-</td>
+                                <td>{{$loop->index + 1}}</td>
+                                <td>{{ $item->code }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->sks }}</td>
+                                <td width="40px">@if($item->is_teori) {{ $item->hours }} @else - @endif</td>
+                                <td width="40px">@if(!$item->is_teori) {{ $item->hours }} @else - @endif</td>
                             </tr>
+                            @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th colspan="3" style="vertical-align: middle; text-align: center;">Jumlah</th>
-                                <th>2</th>
-                                <th>90</th>
-                                <th>-</th>
+                                <th>{{ $courses->sum('sks') }}</th>
+                                <th>{{ $courses->where('is_teori', 1)->sum('hours') }}</th>
+                                <th>{{ $courses->where('is_teori', 0)->sum('hours') }}</th>
                             </tr>
                         </tfoot>
                     </table>

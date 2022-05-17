@@ -21,14 +21,14 @@
             <i class="fa fa-th"></i> <span>Pemetaan Profil Lulusan</span>
         </a>
     </li>
+    <li class="{{ request() -> is('kaprodi/mata-kuliah') ? 'active' : '' }}">
+        <a href="/kaprodi/mata-kuliah">
+            <i class="fa fa-book"></i> <span>Mata Kuliah</span>
+        </a>
+    </li>
     <li class="{{ request() -> is('pemetaancpl') ? 'active' : '' }}">
         <a href="/pemetaancpl">
             <i class="fa fa-th"></i> <span>Pemetaan CPL</span>
-        </a>
-    </li>
-    <li class="{{ request() -> is('matakuliah') ? 'active' : '' }}">
-        <a href="/matakuliah">
-            <i class="fa fa-book"></i> <span>Mata Kuliah</span>
         </a>
     </li>
     <li class="{{ request() -> is('dosen') ? 'active' : '' }}">
