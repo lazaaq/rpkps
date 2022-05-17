@@ -34,7 +34,7 @@
                                 <td width="200px">15:55</td>
                                 <td width="200px">D.TEDI DARING 10</td>
                                 <td width="200px">
-                                    <a href="" class="btn btn-success btn-xs">Lihat</a>
+                                    <a href="/hasilKesesuaian" class="btn btn-success btn-xs">Lihat</a>
                                 </td> 
                                 <td width="200px">
                                     <a href="/formInput" class="btn btn-primary btn-sm">
