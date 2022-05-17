@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/dosen/add">
+                <a href="/adddosen">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Dosen</span>
                     </button>
@@ -35,7 +35,11 @@
                                 <td width="200px">111198611201202101</td>
                                 <td width="200px">rifqi_ilkom@mail.ugm.ac.id</td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editdosen">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -46,7 +50,11 @@
                                 <td>198703222019031011</td>
                                 <td>fsyahrian@mail.ugm.ac.id</td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editdosen">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -57,7 +65,11 @@
                                 <td>111199407202002101</td>
                                 <td>dinar.nugroho.p@mail.ugm.ac.id</td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editdosen">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -68,7 +80,11 @@
                                 <td>111199209201605201</td>
                                 <td>divi.galih@mail.ugm.ac.id</td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editdosen">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
