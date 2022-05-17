@@ -31,8 +31,8 @@
             <i class="fa fa-th"></i> <span>Pemetaan CPL</span>
         </a>
     </li>
-    <li class="{{ request() -> is('dosen') ? 'active' : '' }}">
-        <a href="/dosen">
+    <li class="{{ request() -> is('akademik/dosen') ? 'active' : '' }}">
+        <a href="/akademik/dosen">
             <i class="fa fa-users"></i> <span>Dosen</span>
         </a>
     </li>

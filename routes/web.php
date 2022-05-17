@@ -71,48 +71,51 @@ Route::prefix('kaprodi')->group(function () {
 //         Route::get('', [RpkpsController::class, 'index']);
 //         Route::get('{id}', [RpkpsController::class, 'show']);
 //     });
-//     Route::prefix('rpkpm')->group(function () {
-//         Route::get('', [RpkpmController::class, 'index']);
-//         Route::get('{id}', [RpkpmController::class, 'show']);
-//     });
+    // Route::prefix('rpkpm')->group(function () {
+    //     Route::get('', [RpkpmController::class, 'index']);
+    //     Route::get('{id}', [RpkpmController::class, 'show']);
+    // });
 // });
 
-// // AKADEMIK
-// Route::prefix('akademik')->group(function () {
-//     Route::prefix('dosen')->group(function () {
-//         Route::get('', [LecturerController::class, 'index']);
-//         Route::post('', [LecturerController::class, 'store']);
-//         Route::put('{id}', [LecturerController::class, 'update']);
-//     });
-//     Route::prefix('kaprodi')->group(function () {
-//         Route::get('', [HeadOfStudyProgramController::class, 'index']);
-//         Route::post('', [HeadOfStudyProgramController::class, 'store']);
-//         Route::put('{id}', [HeadOfStudyProgramController::class, 'update']);
-//     });
-//     Route::prefix('semester')->group(function () {
-//         Route::get('', [SemesterController::class, 'index']);
-//         Route::post('', [SemesterController::class, 'store']);
-//         Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses']);
-//         Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses']);
-//     });
-//     Route::prefix('plotting-dosen')->group(function () {
-//         Route::get('', [LecturerPlottingController::class, 'index']);
-//         Route::get('{id}', [LecturerPlottingController::class, 'show']);
-//         Route::put('', [LecturerPlottingController::class, 'update']);
-//     });
-// });
+// AKADEMIK
+Route::prefix('akademik')->group(function () {
+    Route::prefix('dosen')->group(function () {
+        Route::get('', [LecturerController::class, 'index'])->name('akademik.dosen.index'); // akademik.dosen.v_dosen
+        Route::get('create', [LecturerController::class, 'create'])->name('akademik.dosen.create'); // akademik.dosen.v_adddosen
+        Route::post('', [LecturerController::class, 'store'])->name('akademik.dosen.store');
+        Route::get('{id}/edit', [LecturerController::class, 'edit'])->name('akademik.dosen.edit'); // akademik.dosen.v_editdosen
+        Route::put('{id}/update', [LecturerController::class, 'update'])->name('akademik.dosen.update');
+        Route::delete('{id}/delete', [LecturerController::class, 'destroy'])->name('akademik.dosen.delete');
+    });
+    // Route::prefix('kaprodi')->group(function () {
+    //     Route::get('', [HeadOfStudyProgramController::class, 'index']);
+    //     Route::post('', [HeadOfStudyProgramController::class, 'store']);
+    //     Route::put('{id}', [HeadOfStudyProgramController::class, 'update']);
+    // });
+    // Route::prefix('semester')->group(function () {
+    //     Route::get('', [SemesterController::class, 'index']);
+    //     Route::post('', [SemesterController::class, 'store']);
+    //     Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses']);
+    //     Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses']);
+    // });
+    // Route::prefix('plotting-dosen')->group(function () {
+    //     Route::get('', [LecturerPlottingController::class, 'index']);
+    //     Route::get('{id}', [LecturerPlottingController::class, 'show']);
+    //     Route::put('', [LecturerPlottingController::class, 'update']);
+    // });
+});
 
 Route::get('/', function () {
     return 'Index Page';
 });
-// route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
-// route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
-// route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
-// route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
+route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
+route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
+route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
+route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
 
 // Akademik
-route::view('/dosen', 'akademik.dosen.v_dosen');
+// route::view('/dosen', 'akademik.dosen.v_dosen');
 route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
 route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');

@@ -27,51 +27,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($lecturer as $item)
                             <tr>
-                                <td width="50px">{{$no++}}</td>
+                                <td width="50px">{{$loop->index + 1}}</td>
                                 <td width="200px"></td>
-                                <td width="200px">Muhammad Fakhrurrifqi, S.Kom., M.Cs.</td>
-                                <td width="200px">111198611201202101</td>
-                                <td width="200px">rifqi_ilkom@mail.ugm.ac.id</td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
+                                <td width="200px">{{ $item->name }}</td>
+                                <td width="200px">{{ $item->nip }}</td>
+                                <td width="200px">{{ $item->email }}</td>
+                                <td class="d-flex">
+                                    <a href="{{ route('akademik.dosen.edit', $item->id) }}" class="label label-warning btn-xs">Edit</a>
+                                    <form action="{{ route('akademik.dosen.delete', $item->id) }}" method="post" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="label label-danger btn-xs" style="border: none">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td></td>
-                                <td>Firma Syahrian, S.Kom., M.Cs.</td>
-                                <td>198703222019031011</td>
-                                <td>fsyahrian@mail.ugm.ac.id</td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td></td>
-                                <td>Dinar Nugroho Pratomo, S.Kom., M.IM., M.Cs.</td>
-                                <td>111199407202002101</td>
-                                <td>dinar.nugroho.p@mail.ugm.ac.id</td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td></td>
-                                <td>Divi Galih Prasetyo Putri, S.Kom., M.Kom.</td>
-                                <td>111199209201605201</td>
-                                <td>divi.galih@mail.ugm.ac.id</td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
