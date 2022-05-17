@@ -41,6 +41,11 @@
             <i class="fa fa-user"></i> <span>Kaprodi</span>
         </a>
     </li>
+    <li class="{{ request() -> is('akademik/semester') ? 'active' : '' }}">
+        <a href="/akademik/semester">
+            <i class="fa fa-list-ul"></i> <span>Semester</span>
+        </a>
+    </li>
     <li class="{{ request()->is('semestergasal', 'semestergenap') ? 'active treeview' : 'treeview' }} " style="height: auto;">
         <a href="#">
             <i class="px-nav-icon fa fa-random"></i> <span>Plotting Dosen</span>
@@ -52,11 +57,6 @@
             <li class="{{ request() -> is('semestergasal') ? 'active' : '' }}"><a href="/semestergasal"><i class="fa fa-circle-o"></i>Semester Gasal</a></li>
             <li class="{{ request() -> is('semestergenap') ? 'active' : '' }}"><a href="/semestergenap"><i class="fa fa-circle-o"></i>Semester Genap</a></li>
         </ul>
-    </li>
-    <li class="{{ request() -> is('semester') ? 'active' : '' }}">
-        <a href="/semester">
-            <i class="fa fa-list-ul"></i> <span>Semester</span>
-        </a>
     </li>
     <li class="{{ request() -> is('pelaksanaanPerkuliahan') ? 'active' : '' }}">
         <a href="/pelaksanaanPerkuliahan">

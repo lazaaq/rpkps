@@ -12,4 +12,9 @@ class Curriculum extends Model
 
     protected $table = 'curriculums';
     protected $fillable = ['name', 'year', 'status'];
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

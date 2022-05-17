@@ -95,12 +95,13 @@ Route::prefix('akademik')->group(function () {
         Route::put('{id}', [HeadOfStudyProgramController::class, 'update'])->name('akademik.kaprodi.update');
         Route::delete("{id}/delete", [HeadOfStudyProgramController::class, 'destroy'])->name('akademik.kaprodi.delete');
     });
-    // Route::prefix('semester')->group(function () {
-    //     Route::get('', [SemesterController::class, 'index']);
-    //     Route::post('', [SemesterController::class, 'store']);
-    //     Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses']);
-    //     Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses']);
-    // });
+    Route::prefix('semester')->group(function () {
+        Route::get('', [SemesterController::class, 'index'])->name('akademik.semester.index'); // akademik.semester.v_semester
+        Route::get('create', [SemesterController::class, 'create'])->name('akademik.semester.create'); // akademik.semester.v_addsemester
+        Route::post('', [SemesterController::class, 'store'])->name('akademik.semester.store');
+        Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses'])->name('akademik.semester.mata-kuliah-ditawarkan'); // akademik.semester.v_mkditawarkan
+        Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses'])->name('akademik.semester.mata-kuliah-ditawarkan.update');
+    });
     // Route::prefix('plotting-dosen')->group(function () {
     //     Route::get('', [LecturerPlottingController::class, 'index']);
     //     Route::get('{id}', [LecturerPlottingController::class, 'show']);
@@ -122,9 +123,8 @@ route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
 route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
-route::view('/semester', 'akademik.semester.v_semester');
-route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
-route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
+// route::view('/semester', 'akademik.semester.v_semester');
+// route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
 
 //route mahasiswa
 route::view('/pelaksanaanPerkuliahan', 'mahasiswa.v_pelaksanaanPerkuliahan');

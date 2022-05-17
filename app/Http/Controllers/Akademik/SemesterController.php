@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Akademik;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\CourseClassroom;
+use App\Models\Curriculum;
 use App\Models\Semester;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -12,16 +13,16 @@ use Illuminate\Support\Facades\Validator;
 class SemesterController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $semester) = initAPI();
-
         $semester = Semester::all();
-        if ($semester) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = 200;
-        } else {
+        if (!$semester) {
             $message = config('constants.response.message.failed.notFound');
+            return $message;
         }
-        return responseAPI($message, $statusCode, $semester);
+        return view('akademik.semester.v_semester', compact('semester'));
+    }
+
+    public function create() {
+        return view('akademik.semester.v_addsemester');
     }
 
     public function store(Request $request) {
@@ -59,17 +60,14 @@ class SemesterController extends Controller
     }
 
     public function showOfferedCourses($id) {
-        list($message, $statusCode, $semester) = initAPI();
-
-        $semester = Course::with('studyProgram', 'semester', 'courseClassrooms')->get();
-        if ($semester) {
-            $message = config('constants.response.message.success.getOne');
-            $statusCode = config('constants.response.statusCode.success.getOne');
-        } else {
+        $course = Course::with('studyProgram', 'semester', 'courseClassrooms')->where('semester_id', $id)->get();
+        $curriculum = Curriculum::with('courses')->get();
+        if (!$course) {
             $message = config('constants.response.message.failed.getOne');
             $statusCode = config('constants.response.statusCode.failed.getOne');
+            return responseAPI($message, $statusCode);
         }
-        return responseAPI($message, $statusCode, $semester);
+        return view('akademik.semester.v_mkditawarkan', compact('course', 'curriculum'));
     }
 
     public function updateOfferedCourses(Request $request, $id) {

@@ -13,9 +13,9 @@
                     <label class="col-sm-1 control-label" style="text-align:left;">Kurikulum</label>
                         <div class="col-sm-6">
                             <select class="form-control select2-hidden-accessible" name="sesiId" id="sesiId" tabindex="-1" aria-hidden="true">
-                                <option>Kurikulum MBKM 2021</option>
-                                <option>Kurikulum 2021</option>
-                                <option>Kurikulum 2020</option>
+                                @foreach ($curriculum as $item)
+                                <option>{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>      
                 </div>
@@ -43,31 +43,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($course as $item)
                             <tr>
                                 <td><input type="checkbox" value=""></td>
-                                <td width="50px">{{$no++}}</td>
-                                <td width="200px">TRPL</td>
-                                <td width="200px">SVPL214101</td>
-                                <td width="200px">Pengantar Teknologi Informasi</td>
-                                <td width="200px">2</td>
-                                <td width="200px">Wajib</td>
-                                <td width="200px">1</td>
-                                <td width="200px">T</td>
-                                <td width="200px">PL1AB</td>
+                                <td width="50px">{{ $loop->index + 1 }}</td>
+                                <td width="200px">{{ $item->studyProgram->abbreviation }}</td>
+                                <td width="200px">{{ $item->code }}</td>
+                                <td width="200px">{{ $item->name }}</td>
+                                <td width="200px">{{ $item->sks }}</td>
+                                <td width="200px">{{ $item->is_wajib }}</td>
+                                <td width="200px">{{ $item->semester->name }}</td>
+                                <td width="200px">@if($item->is_teori) T @else P @endif</td>
+                                <td width="200px">
+                                    @foreach ($item->courseClassrooms as $item)
+                                    {{ $item->classroom->name }}, 
+                                    @endforeach
+                                </td>
                             </tr>
-                            <tr>
-                                <td><input type="checkbox" value=""></td>
-                                <td>{{$no++}}</td>
-                                <td>TRPL</td>
-                                <td>SVPL214204</td>
-                                <td>Praktikum Struktur Data</td>
-                                <td>2</td>
-                                <td>Wajib</td>
-                                <td>2</td>
-                                <td>P</td>
-                                <td>PL2AA, PL2BB</td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
