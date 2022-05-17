@@ -38,10 +38,16 @@ route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
 
 // Akademik
 route::view('/dosen', 'akademik.dosen.v_dosen');
+route::view('/adddosen', 'akademik.dosen.v_adddosen');
+route::view('/editdosen', 'akademik.dosen.v_editdosen');
 route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
+route::view('/addkaprodi', 'akademik.kaprodi.v_addkaprodi');
+route::view('/editkaprodi', 'akademik.kaprodi.v_editkaprodi');
 route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
+route::view('/addplotdosen', 'akademik.plottingdosen.v_addplotdosen');
 route::view('/semester', 'akademik.semester.v_semester');
+route::view('/addsemester', 'akademik.semester.v_addsemester');
 route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
 route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 

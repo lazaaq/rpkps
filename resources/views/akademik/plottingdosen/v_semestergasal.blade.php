@@ -32,7 +32,13 @@
                                 <td width="200px">PL1AB</td>
                                 <td width="200px">2</td>
                                 <td width="200px"></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -41,7 +47,13 @@
                                 <td>PL1AB</td>
                                 <td>2</td>
                                 <td></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -50,7 +62,13 @@
                                 <td>PL1AB</td>
                                 <td>2</td>
                                 <td></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -59,7 +77,13 @@
                                 <td>PL1AB</td>
                                 <td>2</td>
                                 <td></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -68,7 +92,13 @@
                                 <td>PL1AA, PL1BB</td>
                                 <td>2</td>
                                 <td></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -77,7 +107,13 @@
                                 <td>PL1AA, PL1BB</td>
                                 <td>2</td>
                                 <td>Muhammad Fakhrurrifqi, S.Kom., M.Cs.</td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -86,7 +122,13 @@
                                 <td>PL1AB</td>
                                 <td>2</td>
                                 <td>Muhammad Fakhrurrifqi, S.Kom., M.Cs.</td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -95,7 +137,13 @@
                                 <td>PL1AB</td>
                                 <td>2</td>
                                 <td></td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td>{{$no++}}</td>
@@ -104,7 +152,13 @@
                                 <td>PL1AA, PL1BB</td>
                                 <td>2</td>
                                 <td>Yusron Fuadi, S,Sn., M.Sn.</td>
-                                <td><span type="button" class="label label-primary btn-xs">Tambah Dosen</span></td>
+                                <td>
+                                    <a href="/addplotdosen">
+                                        <button type="button" class="label label-primary btn-xs">
+                                            <span>Tambah Dosen</span>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot>
