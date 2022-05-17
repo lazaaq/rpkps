@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/kaprodi/add">
+                <a href="{{ route('akademik.kaprodi.create') }}">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Kaprodi</span>
                     </button>
@@ -26,47 +26,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($headOfStudyProgram as $item)
                             <tr>
-                                <td width="50px">{{$no++}}</td>
-                                <td width="200px">Kaprodi Teknologi Rekayasa Instrumentasi Kontrol TA 2021/2022</td>
-                                <td width="200px">Hidayat Nur Isnianto, S.T., M.Eng.</td>
-                                <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
+                                <td width="50px">{{$loop->index + 1}}</td>
+                                <td width="200px">Kaprodi {{ $item->studyProgram->name }} TA {{ $item->year }}</td>
+                                <td width="200px">{{ $item->lecturer->name }}</td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
+                                    @if ($item->status)
+                                    <span type="button" class="label label-success btn-xs">Aktif</span>
+                                    @else
+                                    <span type="button" class="label label-danger btn-xs">Tidak Aktif</span>
+                                    @endif
+                                </td>
+                                <td class="d-flex">
+                                    <a href="{{ route('akademik.kaprodi.edit', $item->id) }}" class="label label-warning btn-xs">Edit</a>
+                                    <form action="{{ route('akademik.kaprodi.delete', $item->id) }}" method="post" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="label label-danger btn-xs" style="border: none">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Kaprodi Teknologi Rekayasa Perangkat Lunak TA 2021/2022</td>
-                                <td>Muhammad Fakhrurrifqi, S.Kom., M.Cs.</td>
-                                <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Kaprodi Teknologi Rekayasa Internet TA 2021/2022</td>
-                                <td>Dr. Ronald Adrian, S.T., M.Eng.</td>
-                                <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Kaprodi Teknologi Rekayasa Elektro TA 2021/2022</td>
-                                <td>Ma’un Budiyanto, S.T., M.T.</td>
-                                <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
-                                <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
-                                    <span type="button" class="label label-danger btn-xs">Hapus</span>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

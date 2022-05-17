@@ -36,8 +36,8 @@
             <i class="fa fa-users"></i> <span>Dosen</span>
         </a>
     </li>
-    <li class="{{ request() -> is('kaprodi') ? 'active' : '' }}">
-        <a href="/kaprodi">
+    <li class="{{ request() -> is('akademik/kaprodi') ? 'active' : '' }}">
+        <a href="/akademik/kaprodi">
             <i class="fa fa-user"></i> <span>Kaprodi</span>
         </a>
     </li>

@@ -87,11 +87,14 @@ Route::prefix('akademik')->group(function () {
         Route::put('{id}/update', [LecturerController::class, 'update'])->name('akademik.dosen.update');
         Route::delete('{id}/delete', [LecturerController::class, 'destroy'])->name('akademik.dosen.delete');
     });
-    // Route::prefix('kaprodi')->group(function () {
-    //     Route::get('', [HeadOfStudyProgramController::class, 'index']);
-    //     Route::post('', [HeadOfStudyProgramController::class, 'store']);
-    //     Route::put('{id}', [HeadOfStudyProgramController::class, 'update']);
-    // });
+    Route::prefix('kaprodi')->group(function () {
+        Route::get('', [HeadOfStudyProgramController::class, 'index'])->name('akademik.kaprodi.index'); // akademik.kaprodi.v_kaprodi
+        Route::get('create', [HeadOfStudyProgramController::class, 'create'])->name('akademik.kaprodi.create'); // akademik.kaprodi.v_addkaprodi
+        Route::post('', [HeadOfStudyProgramController::class, 'store'])->name('akademik.kaprodi.store'); 
+        Route::get('{id}/edit', [HeadOfStudyProgramController::class, 'edit'])->name('akademik.kaprodi.edit'); // akademik.kaprodi.v_editkaprodi
+        Route::put('{id}', [HeadOfStudyProgramController::class, 'update'])->name('akademik.kaprodi.update');
+        Route::delete("{id}/delete", [HeadOfStudyProgramController::class, 'destroy'])->name('akademik.kaprodi.delete');
+    });
     // Route::prefix('semester')->group(function () {
     //     Route::get('', [SemesterController::class, 'index']);
     //     Route::post('', [SemesterController::class, 'store']);
@@ -116,7 +119,7 @@ route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 
 // Akademik
 // route::view('/dosen', 'akademik.dosen.v_dosen');
-route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
+// route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
 route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
 route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
 route::view('/semester', 'akademik.semester.v_semester');
