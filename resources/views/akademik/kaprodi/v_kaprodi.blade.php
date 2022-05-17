@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/kaprodi/add">
+                <a href="/addkaprodi">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Kaprodi</span>
                     </button>
@@ -33,7 +33,11 @@
                                 <td width="200px">Hidayat Nur Isnianto, S.T., M.Eng.</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editkaprodi">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -43,7 +47,11 @@
                                 <td>Muhammad Fakhrurrifqi, S.Kom., M.Cs.</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editkaprodi">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -53,7 +61,11 @@
                                 <td>Dr. Ronald Adrian, S.T., M.Eng.</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editkaprodi">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
@@ -63,7 +75,11 @@
                                 <td>Ma’un Budiyanto, S.T., M.T.</td>
                                 <td><span type="button" class="label label-success btn-xs">Aktif</span></td>
                                 <td>
-                                    <span type="button" class="label label-warning btn-xs">Edit</span>
+                                    <a href="/editdosen">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                     <span type="button" class="label label-danger btn-xs">Hapus</span>
                                 </td>
                             </tr>
