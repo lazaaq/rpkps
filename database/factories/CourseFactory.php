@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Curriculum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,11 @@ class CourseFactory extends Factory
      */
     public function definition()
     {
+        $curriculum = Curriculum::all()->count();
         return [
             'study_program_id' => 1,
             'semester_id' => 1,
+            'curriculum_id' => $this->faker->randomNumber(1, $curriculum),
             'prerequisite' => 1,
             'code' => $this->faker->lexify('?????'),
             'name' => $this->faker->word(),
