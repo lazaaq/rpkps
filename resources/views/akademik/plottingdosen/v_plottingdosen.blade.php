@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Semester Gasal 2021/2022</h3>
+                <h3 class="box-title">{{ $semester->name }} {{ explode('-', $semester->start_date)[0] }}/{{ explode('-', $semester->end_date)[0] }}</h3>
             </div>
             <div class="box-body ">
                 <div class="card-body table-responsive p-0" style="height: responsive;">
@@ -40,7 +40,7 @@
                                         {{ $lecturerPlotting->lecturer->name }},
                                     @endforeach
                                 </td>
-                                <td><a href="" class="label label-primary btn-xs">Tambah Dosen</a></td>
+                                <td><a href="{{ route('akademik.plotting-dosen.create', $item->id) }}" class="label label-primary btn-xs">Tambah Dosen</a></td>
                             </tr>
                             @endforeach
                         </tbody>

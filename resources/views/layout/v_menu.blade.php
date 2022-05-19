@@ -54,8 +54,9 @@
             </span>
         </a>
         <ul class="treeview-menu" style="">
-            <li class="{{ request() -> is('semestergasal') ? 'active' : '' }}"><a href="/semestergasal"><i class="fa fa-circle-o"></i>Semester Gasal</a></li>
-            <li class="{{ request() -> is('semestergenap') ? 'active' : '' }}"><a href="/semestergenap"><i class="fa fa-circle-o"></i>Semester Genap</a></li>
+            @foreach (menuPlottingDosen() as $item)
+                <li class="{{ request() -> is('akademik/plotting-dosen/' . $item->id) ? 'active' : '' }} "><a href="/akademik/plotting-dosen/{{ $item->id }}"><i class="fa fa-circle-o"></i>{{ $item->name }}</a></li>
+            @endforeach
         </ul>
     </li>
     <li class="{{ request() -> is('pelaksanaanPerkuliahan') ? 'active' : '' }}">

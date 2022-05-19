@@ -102,11 +102,11 @@ Route::prefix('akademik')->group(function () {
         Route::get('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'showOfferedCourses'])->name('akademik.semester.mata-kuliah-ditawarkan'); // akademik.semester.v_mkditawarkan
         Route::put('{id}/mata-kuliah-ditawarkan', [SemesterController::class, 'updateOfferedCourses'])->name('akademik.semester.mata-kuliah-ditawarkan.update');
     });
-    // Route::prefix('plotting-dosen')->group(function () {
-    //     Route::get('', [LecturerPlottingController::class, 'index']);
-    //     Route::get('{id}', [LecturerPlottingController::class, 'show']);
-    //     Route::put('', [LecturerPlottingController::class, 'update']);
-    // });
+    Route::prefix('plotting-dosen')->group(function () {
+        Route::get('{id}', [LecturerPlottingController::class, 'index'])->name('akademik.plotting-dosen.index'); // akademik.plottingdosen.v_semestergasal
+        Route::get('{id}/create', [LecturerPlottingController::class, 'create'])->name('akademik.plotting-dosen.create'); // akademik.plottingdosen.v_addsemestergasal
+        Route::post('store', [LecturerPlottingController::class, 'store'])->name('akademik.plotting-dosen.store');
+    });
 });
 
 Route::get('/', function () {
@@ -121,15 +121,15 @@ route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // Akademik
 // route::view('/dosen', 'akademik.dosen.v_dosen');
 // route::view('/kaprodi', 'akademik.kaprodi.v_kaprodi');
-route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
-route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
+// route::view('/semestergasal', 'akademik.plottingdosen.v_semestergasal');
+// route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
 // route::view('/semester', 'akademik.semester.v_semester');
 // route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
 route::view('/adddosen', 'akademik.dosen.v_adddosen');
 route::view('/editdosen', 'akademik.dosen.v_editdosen');
 route::view('/addkaprodi', 'akademik.kaprodi.v_addkaprodi');
 route::view('/editkaprodi', 'akademik.kaprodi.v_editkaprodi');
-route::view('/addplotdosen', 'akademik.plottingdosen.v_addplotdosen');
+// route::view('/addplotdosen', 'akademik.plottingdosen.v_addplotdosen');
 route::view('/addsemester', 'akademik.semester.v_addsemester');
 
 //route mahasiswa

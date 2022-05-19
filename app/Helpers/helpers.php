@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Semester;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -39,6 +40,11 @@ function deleteImage($path) {
     }
   }
   return false;
+}
+
+function menuPlottingDosen() {
+  $semester = Semester::where('active', 1)->get();
+  return $semester;
 }
 
 ?>
