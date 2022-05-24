@@ -46,11 +46,11 @@
             <i class="fa fa-list-ul"></i> <span>Semester</span>
         </a>
     </li>
-    <li class="{{ request()->is('semestergasal', 'semestergenap') ? 'active treeview' : 'treeview' }} " style="height: auto;">
+    <li class="{{ request()->is('akademik/plotting-dosen/*', 'semestergenap') ? 'active treeview' : 'treeview' }} " style="height: auto;">
         <a href="#">
             <i class="px-nav-icon fa fa-random"></i> <span>Plotting Dosen</span>
             <span class="pull-right-container">
-        <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu" style="">
@@ -59,8 +59,8 @@
             @endforeach
         </ul>
     </li>
-    <li class="{{ request() -> is('pelaksanaanPerkuliahan') ? 'active' : '' }}">
-        <a href="/pelaksanaanPerkuliahan">
+    <li class="{{ request() -> is('mahasiswa/perkuliahan') ? 'active' : '' }}">
+        <a href="/mahasiswa/perkuliahan">
             <i class="px-nav-icon fa fa-calendar"></i> <span>Perkuliahan (mhs)</span>
         </a>
     </li>

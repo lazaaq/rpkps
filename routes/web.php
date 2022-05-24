@@ -12,6 +12,7 @@ use App\Http\Controllers\Akademik\LecturerController;
 use App\Http\Controllers\Akademik\HeadOfStudyProgramController;
 use App\Http\Controllers\Akademik\LecturerPlottingController;
 use App\Http\Controllers\Akademik\SemesterController;
+use App\Http\Controllers\Mahasiswa\StudentCourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,6 +110,15 @@ Route::prefix('akademik')->group(function () {
     });
 });
 
+// MAHASISWA
+Route::prefix('mahasiswa')->group(function () {
+    Route::prefix('perkuliahan')->group(function () {
+        Route::get('', [StudentCourseController::class, 'index'])->name('mahasiswa.perkuliahan.index'); // mahasiswa.perkuliahan.v_pelaksanaanPerkuliahan
+        Route::get('{courseId}/{lecturerPlottingId}', [StudentCourseController::class, 'show'])->name('mahasiswa.perkuliahan.show'); // mahasiswa.perkuliahan.v_perkuliahanMingguan
+        Route::get('form', [StudentCourseController::class, 'form'])->name('mahasiswa.perkuliahan.form'); // mahasiswa.v_formInput
+    });
+});
+
 Route::get('/', function () {
     return 'Index Page';
 });
@@ -133,9 +143,9 @@ route::view('/editkaprodi', 'akademik.kaprodi.v_editkaprodi');
 route::view('/addsemester', 'akademik.semester.v_addsemester');
 
 //route mahasiswa
-route::view('/pelaksanaanPerkuliahan', 'mahasiswa.v_pelaksanaanPerkuliahan');
-route::view('/pelaksanaanMingguan', 'mahasiswa.v_perkuliahanMingguan');
-route::view('/formInput', 'mahasiswa.v_formInput');
+// route::view('/pelaksanaanPerkuliahan', 'mahasiswa.v_pelaksanaanPerkuliahan');
+// route::view('/pelaksanaanMingguan', 'mahasiswa.v_perkuliahanMingguan');
+// route::view('/formInput', 'mahasiswa.v_formInput');
 
 // Dosen
 route::view('/rpkps', 'dosen.rpkps.v_rpkps');
