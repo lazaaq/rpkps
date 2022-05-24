@@ -27,87 +27,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($semester as $item)
                             <tr>
-                                <td width="50px">{{$no++}}</td>
-                                <td width="200px">Semester Genap 2021/2022</td>
-                                <td width="200px">2 Februari 2022</td>
-                                <td width="200px">31 Juli 2022</td>
-                                <td><span type="button" class="label label-success btn-xs">Ya</span></td>
+                                <td width="50px">{{$loop->index + 1}}</td>
+                                <td width="200px">{{ $item->name }}</td>
+                                <td width="200px">{{ $item->start_date }}</td>
+                                <td width="200px">{{ $item->end_date }}</td>
+                                <td>
+                                    @if($item->active)
+                                    <span type="button" class="label label-success btn-xs">Aktif</span>
+                                    @else 
+                                    <span type="button" class="label label-danger btn-xs">Tidak Aktif</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <div class="box-header">
-                                        <a href="/mkditawarkan">
+                                        <a href="{{ route('akademik.semester.mata-kuliah-ditawarkan', $item->id) }}">
                                             <button type="button" class="btn btn-xs" style="background-color: #007BFF; color: white;">
-                                                <i class="fa fa-arrow-right"></i>
+                                                <i class="fa fa-arrow-right">></i>
                                             </button>
                                         </a>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Semester Gasal 2021/2022</td>
-                                <td>1 Agustus 2021</td>
-                                <td>31 Januari 2022</td>
-                                <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td>
-                                    <div class="box-header">
-                                        <a href="/semester/add">
-                                            <button type="button" class="btn btn-xs" style="background-color: #007BFF; color: white;">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Semester Antara 2021/2022</td>
-                                <td>14 Februari 2022</td>
-                                <td>31 Oktober 2022</td>
-                                <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td>
-                                    <div class="box-header">
-                                        <a href="/semester/add">
-                                            <button type="button" class="btn btn-xs" style="background-color: #007BFF; color: white;">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Semester Genap 2020/2021</td>
-                                <td>4 Januari 2021</td>
-                                <td>30 Juli 2021</td>
-                                <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td>
-                                    <div class="box-header">
-                                        <a href="/semester/add">
-                                            <button type="button" class="btn btn-xs" style="background-color: #007BFF; color: white;">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>Semester Gasal 2020/2021</td>
-                                <td>1 Juli 2020</td>
-                                <td>31 Januari 2021</td>
-                                <td><span type="button" class="label label-danger btn-xs">Tidak</span></td>
-                                <td>
-                                    <div class="box-header">
-                                        <a href="/semester/add">
-                                            <button type="button" class="btn btn-xs" style="background-color: #007BFF; color: white;">
-                                                <i class="fa fa-arrow-right"></i>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

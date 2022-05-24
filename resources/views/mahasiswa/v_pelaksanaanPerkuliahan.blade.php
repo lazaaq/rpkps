@@ -11,10 +11,9 @@
                     <label class="col-sm-1 control-label" style="text-align:left;">Semester</label>
                         <div class="col-sm-6">
                             <select class="form-control select2-hidden-accessible" name="sesiId" id="sesiId" tabindex="-1" aria-hidden="true">
-                                <option>Semester Genap 2021/2022</option>
-                                <option>Semester Gasal 2021/2022</option>
-                                <option>Semester Genap 2020/2021</option>                                                
-                                <option>Semester Gasal 2020/2021</option>
+                                @foreach ($semester as $item)
+                                    <option>{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </div>      
                 </div>
@@ -34,21 +33,31 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($course as $item)
                             <tr>
-                                <td width="50px">{{$no++}}</td>
-                                <td width="200px">SVPL214402</td>
-                                <td width="200px">Proyek Aplikasi Dasar 2</td>
-                                <td width="200px">2</td>
-                                <td width="200px">PL3AA</td>
+                                <td width="50px">{{$loop->index + 1}}</td>
+                                <td width="200px">{{ $item->code }}</td>
+                                <td width="200px">{{ $item->name }}</td>
+                                <td width="200px">{{ $item->sks }}</td>
                                 <td width="200px">
-                                Divi Galih Prasetyo Putri, S.Kom., M.Kom. 
+                                    @foreach ($item->courseClassrooms as $courseClassroom)
+                                        {{ $courseClassroom->classroom->name }},
+                                    @endforeach
+                                </td>
                                 <td width="200px">
-                                    <a href="/pelaksanaanMingguan" class="btn btn-primary btn-sm ">
-                                                <span class="icon fa fa-arrow-right"></span>
+                                    @foreach ($item->lecturerPlottings as $lecturerPlotting)
+                                        {{ $lecturerPlotting->lecturer->name }} <br>
+                                    @endforeach
+                                <td width="200px">
+                                    @foreach ($item->lecturerPlottings as $lecturerPlotting)
+                                    <a href="{{ route('mahasiswa.perkuliahan.show', [$item->id, $lecturerPlotting->id]) }}" class="btn btn-primary btn-sm ">
+                                        <span class="icon fa fa-arrow-right"></span>
                                     </a>
+                                    <br>
+                                    @endforeach
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

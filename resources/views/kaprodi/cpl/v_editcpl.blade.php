@@ -3,8 +3,9 @@
 @section('title', 'Kurikulum Prodi Teknologi Rekayasa Perangkat')
 
 @section('content')
-<form action="/kurikulum/insert" method="POST" enctype="multipart/form-data">
+<form action="{{ route('kaprodi.cpl.update', $learningGoal) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="col-xs-6">
             <div class="box">
@@ -14,37 +15,35 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Kode CPL</label>
-                        <input name="kode_cpl" class="form-control" value="{{ old('kode_cpl') }}">
+                        <input name="code" class="form-control" value="{{ $learningGoal->code }}">
                         <div class="text-danger">
-                            @error('nama_kaprodi')
+                            @error('code')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="komponen" class="form-control" value="{{ old('komponen') }}">
+                        <input name="component" class="form-control" value="{{ $learningGoal->component }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('component')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Nilai</label>
-                        <input name="nilai" class="form-control" value="{{ old('nilai') }}">
+                        <input name="value" class="form-control" value="{{ $learningGoal->value }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('value')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <a href="/cpl">
-                            <button type="button" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
-                        </a>
-                        <a href="">
-                            <button type="button" class="btn" style="background-color: white; border-color: #f44336; color: red;">Batal</button>
+                        <button type="submit" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
+                        <a href="{{ route('kaprodi.cpl.index') }}" class="btn" style="background-color: white; border-color: #f44336; color: red;">
+                            Batal
                         </a>
                     </div>
                 </div>

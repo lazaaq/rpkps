@@ -5,31 +5,32 @@ namespace App\Http\Controllers\Akademik;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Models\LecturerPlotting;
+use App\Models\Semester;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class LecturerPlottingController extends Controller
 {
-    public function index() {
-        list($message, $statusCode, $lecturerPlotting) = initAPI();
-
-        $course = Course::with('lecturerPlottings.lecturer', 'courseClassrooms.classroom')->get();
-        if($course) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = config('constants.response.statusCode.success.getAll');
-        } else {
+    public function index($id) {
+        $semester = Semester::find($id);
+        $course = Course::with('lecturerPlottings.lecturer', 'courseClassrooms.classroom')->where('semester_id', $id)->get();
+        
+        if(!$course || !$semester) {
             $message = config('constants.response.message.failed.getAll');
             $statusCode = config('constants.response.statusCode.failed.getAll');
+            return responseAPI($message, $statusCode);
         }
-        return responseAPI($message, $statusCode, $course);
+        return view('akademik.plottingdosen.v_plottingdosen', compact('course', 'semester'));
     }
 
-    public function show($id) {
-        list($message, $statusCode, $lecturerPlotting) = initAPI();
+    public function create($id) {
+        $course = Course::with('courseClassrooms.classroom', 'lecturerPlottings.lecturer', 'semester')->find($id);
+        return view('akademik.plottingdosen.v_addplotdosen', compact('course'));
+    }
 
-        $course = Course::with('lecturerPlottings.lecturer', 'courseClassrooms.classroom')->find($id);
-        return responseAPI($message, $statusCode, $course);
+    public function store(Request $request) {
+
     }
 
     public function update(Request $request) {

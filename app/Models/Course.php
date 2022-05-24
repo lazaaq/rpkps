@@ -39,4 +39,8 @@ class Course extends Model
     {
         return $this->hasMany(LecturerPlotting::class);
     }
+
+    public function curriculum() {
+        return $this->belongsTo(Curriculum::class);
+    }
 }

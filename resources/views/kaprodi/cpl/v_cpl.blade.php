@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/addcpl">
+                <a href="{{ route('kaprodi.cpl.create') }}">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah CPL</span>
                     </button>
@@ -25,44 +25,25 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($learningGoal as $item)
                             <tr>
-                                <td>S1</td>
-                                <td>Sikap</td>
-                                <td>Bertakwa kepada Tuhan Yang Maha Esa dan mampu menunjukkan sikap religious;</td>
-                                <td>
-                                    <a href="/editcpl">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
+                                <td>{{ $item->code }}</td>
+                                <td>{{ $item->component }}</td>
+                                <td>{{ $item->value }}</td>
+                                <td class="d-flex">
+                                    <a href="{{ route('kaprodi.cpl.edit', $item->id) }}" class="btn btn-xs btn-warning">
+                                        Edit
                                     </a>
+                                    <form action="{{ route('kaprodi.cpl.delete', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-xs btn-danger">
+                                            Hapus
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>S2</td>
-                                <td>Sikap</td>
-                                <td>Menjunjung tinggi nilai kemanusiaan dalam menjalankan tugas berdasarkan
-                                    agama, moral, dan etika;</td>
-                                <td>
-                                    <a href="/editcpl">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>S3</td>
-                                <td>Sikap</td>
-                                <td>Berkontribusi dalam peningkatan mutu kehidupan bermasyarakat, berbangsa,
-                                    bernegara, dan kemajuan peradaban berdasarkan Pancasila;</td>
-                                <td>
-                                    <a href="/editcpl">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -9,15 +9,10 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $courses) = initAPI();
-
         $courses = Course::all();
-        if ($courses) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = 200;
-        } else {
-            $message = config('constants.response.message.failed.notFound');
+        if (!$courses) {
+            return config('constants.response.message.failed.notFound');
         }
-        return responseAPI($message, $statusCode, $courses);
+        return view('kaprodi.matakuliah.v_matakuliah', compact('courses'));
     }
 }

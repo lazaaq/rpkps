@@ -8,8 +8,8 @@
         <div class="box">
             <div class="box-header with-border">
                 <div>
-                    <h4><b>SVPL214402 Proyek Aplikasi Dasar 2</b></h4>
-                    <label class="control-label">Dosen :</label><span> Divi Galih Prasetyo Putri, S.Kom., M.Kom. </span>
+                    <h4><b>{{ $course->code }} {{ $course->name }}</b></h4>
+                    <label class="control-label">Dosen :</label><span> {{ $lecturerPlotting->lecturer->name }} </span>
                 </div>
             </div>
             <div class="box-body">
@@ -35,8 +35,8 @@
                                 <td width="200px">D.TEDI DARING 10</td>
                                 <td width="200px"></td> 
                                 <td width="200px">
-                                    <a href="/formInput" class="btn btn-primary btn-sm ">
-                                                <span class="icon fa fa-arrow-right"></span>
+                                    <a href="{{ route('mahasiswa.perkuliahan.form') }}" class="btn btn-primary btn-sm ">
+                                        <span class="icon fa fa-arrow-right"></span>
                                     </a>
                                 </td>
                             </tr>

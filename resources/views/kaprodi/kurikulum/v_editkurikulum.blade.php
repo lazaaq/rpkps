@@ -3,8 +3,9 @@
 @section('title', 'Kurikulum Prodi Teknologi Rekayasa Perangkat')
 
 @section('content')
-<form action="/kurikulum/insert" method="POST" enctype="multipart/form-data">
+<form action="{{ route('kaprodi.kurikulum.update', $curriculum->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="row">
         <div class="col-xs-6">
             <div class="box">
@@ -14,18 +15,18 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label>Nama Kurikulum</label>
-                        <input name="nama_kaprodi" class="form-control" value="{{ old('nama_kaprodi') }}">
+                        <input name="name" class="form-control" value="{{ $curriculum->name }}">
                         <div class="text-danger">
-                            @error('nama_kaprodi')
+                            @error('name')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="prodi" class="form-control" value="{{ old('prodi') }}">
+                        <input name="year" class="form-control" value="{{ $curriculum->year }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('year')
                             {{ $message }}
                             @enderror
                         </div>
@@ -33,11 +34,10 @@
                     <div class="form-group">
                         <label>Status</label>
                         <select class="form-control" name="status" required>
-                            <option selected="selected">--Pilih Status--</option>
-                            <option value="">Aktif</option>
-                            <option value="">Tidak</option>
+                            <option value="1" @if($curriculum->status) selected @endif>Aktif</option>
+                            <option value="0" @if(!$curriculum->status) selected @endif>Tidak Aktif</option>
                             <div class="text-danger">
-                                @error('prodi')
+                                @error('status')
                                 {{ $message }}
                                 @enderror
                             </div>
@@ -47,11 +47,9 @@
                         <input type="file" name="foto_kaprodi" class="form-control"> -->
                     </div>
                     <div class="form-group">
-                        <a href="/">
-                            <button type="button" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
-                        </a>
-                        <a href="">
-                            <button type="button" class="btn" style="background-color: white; border-color: #f44336; color: red;">Batal</button>
+                        <button type="submit" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
+                        <a href="{{ route('kaprodi.kurikulum.index') }}" class="btn" style="background-color: white; border-color: #f44336; color: red;">
+                            Batal
                         </a>
                     </div>
                 </div>
