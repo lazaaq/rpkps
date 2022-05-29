@@ -20,49 +20,29 @@
                             <tr>
                                 <th width="100px">Kode CPL</th>
                                 <th width="100px">Analisis Sistem</th>
-                                <th width="100px">Perekayasa Perangkat Lunak</th>
-                                <th width="100px">Administrator Basis Data</th>
-                                <th width="100px">Pengembangan Game dan Multimedia</th>
+                                @foreach ($graduateProfileLearningGoals as $graduateProfileLearningGoal)
+                                    <th width="100px">{{ $graduateProfileLearningGoal->graduateProfile->name }}</th>
+                                @endforeach
                                 <th width="100px">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($graduateProfileLearningGoals as $graduateProfileLearningGoal)
                             <tr>
-                                <td>S1</td>
-                                <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td rowspan="4" style="vertical-align: middle; text-align: center;">
-                                    <a href="/editpemetaanprofil">
+                                <td>{{ $graduateProfileLearningGoal->learningGoal->code }}</td>
+                                <td>{{ $graduateProfileLearningGoal->learningGoal->component }}</td>
+                                @foreach ($graduateProfileLearningGoals as $item)
+                                <td><input type="checkbox" value="" @if($item->id == $graduateProfileLearningGoal->id) checked @endif disabled></td>
+                                @endforeach
+                                <td style="vertical-align: middle; text-align: center;">
+                                    <a href="{{ route('kaprodi.cpl-profil-lulusan.edit') }}">
                                         <button type="button" class="btn btn-xs btn-warning">
                                             <span>Edit</span>
                                         </button>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>S2</td>
-                                <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                            </tr>
-                            <tr>
-                                <td>S3</td>
-                                <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                            </tr>
-                            <tr>
-                                <td>S4</td>
-                                <td>Sikap</td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                                <td><input type="checkbox" value="" disabled></td>
-                            </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

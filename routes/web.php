@@ -53,10 +53,11 @@ Route::prefix('kaprodi')->group(function () {
         Route::put('{id}', [LearningGoalController::class, 'update'])->name('kaprodi.cpl.update');
         Route::delete('{id}', [LearningGoalController::class, 'destroy'])->name('kaprodi.cpl.delete');
     });
-    // Route::prefix('cpl-profil-lulusan')->group(function () {
-    //     Route::get('', [GraduateProfileLearningGoalController::class, 'index']);
-    //     Route::put('', [GraduateProfileLearningGoalController::class, 'update']);
-    // });
+    Route::prefix('cpl-profil-lulusan')->group(function () {
+        Route::get('', [GraduateProfileLearningGoalController::class, 'index'])->name('kaprodi.cpl-profil-lulusan.index'); // kaprodi.cpl-profil-lulusan.v_cpl-profil-lulusan
+        Route::get('edit', [GraduateProfileLearningGoalController::class, 'edit'])->name('kaprodi.cpl-profil-lulusan.edit'); // kaprodi.pemetaanprofil.v_editpemetaanprofil
+        Route::put('', [GraduateProfileLearningGoalController::class, 'update'])->name('kaprodi.cpl-profil-lulusan.update');
+    });
     Route::prefix('mata-kuliah')->group(function () {
         Route::get('', [CourseController::class, 'index']);
     });
@@ -122,8 +123,8 @@ Route::prefix('mahasiswa')->group(function () {
 Route::get('/', function () {
     return 'Index Page';
 });
-route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
-route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
+// route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
+// route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
 route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');

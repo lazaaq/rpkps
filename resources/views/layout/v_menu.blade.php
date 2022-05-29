@@ -16,8 +16,8 @@
             <i class="fa fa-file-text"></i> <span>CPL</span>
         </a>
     </li>
-    <li class="{{ request() -> is('pemetaanprofil') ? 'active' : '' }}">
-        <a href="/pemetaanprofil">
+    <li class="{{ request() -> is('kaprodi/cpl-profil-lulusan') ? 'active' : '' }}">
+        <a href="/kaprodi/cpl-profil-lulusan">
             <i class="fa fa-th"></i> <span>Pemetaan Profil Lulusan</span>
         </a>
     </li>
