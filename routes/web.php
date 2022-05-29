@@ -120,7 +120,7 @@ Route::prefix('mahasiswa')->group(function () {
 });
 
 Route::get('/', function () {
-    return 'Index Page';
+    return redirect('/kaprodi/kurikulum');
 });
 route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
