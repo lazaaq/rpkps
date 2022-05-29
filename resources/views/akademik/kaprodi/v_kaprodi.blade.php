@@ -7,11 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-<<<<<<< HEAD
                 <a href="{{ route('akademik.kaprodi.create') }}">
-=======
-                <a href="/addkaprodi">
->>>>>>> c95bc61afa0720aa213d78a6e147700b4242a607
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Kaprodi</span>
                     </button>

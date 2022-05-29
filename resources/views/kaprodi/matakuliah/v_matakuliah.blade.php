@@ -12,6 +12,24 @@
                         <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Mata Kuliah</span>
                     </button>
                 </a>
+                <div class="form-group col-xs-3" style="margin-bottom: 0px; padding-left: 0px">
+                    <select class="form-control" name="status" required>
+                        <option selected="selected">--Pilih Semester--</option>
+                        <option value="1">Semester 1</option>
+                        <option value="1">Semester 2</option>
+                        <option value="1">Semester 3</option>
+                        <option value="1">Semester 4</option>
+                        <option value="1">Semester 5</option>
+                        <option value="1">Semester 6</option>
+                        <option value="1">Semester 7</option>
+                        <option value="1">Semester 8</option>
+                        <div class="text-danger">
+                            @error('prodi')
+                            {{ $message }}
+                            @enderror
+                        </div>
+                    </select>
+                </div>
             </div>
             <div class="box-body ">
                 <div class="card-body">

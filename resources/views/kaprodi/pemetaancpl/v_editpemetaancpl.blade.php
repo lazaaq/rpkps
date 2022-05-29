@@ -24,7 +24,6 @@
                                 <th colspan="3" style="text-align: center;">PP</th>
                                 <th colspan="3" style="text-align: center;">KK</th>
                                 <th colspan="3" style="text-align: center;">Ketrampilan Umum</th>
-                                <th rowspan="2">Aksi</th>
                             </tr>
                             <tr>
                                 <th>S1</th>
@@ -53,31 +52,100 @@
                             <tr>
                                 <td>{{$no++}}</td>
                                 <td>Pengantar Teknologi Informasi</td>
-                                <td>90%</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>100%</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
                                 <td>
-                                    <a href="/editpemetaancpl">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="form-group" style="width: 50px;">
+                                        <input name="name" class="form-control" value="{{ old('name') }}">
+                                    </div>
                                 </td>
                             </tr>
                     </table>
