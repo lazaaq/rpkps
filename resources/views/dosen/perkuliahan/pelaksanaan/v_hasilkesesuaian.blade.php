@@ -34,12 +34,53 @@
             <p>1. Apakah materi pembelajaran yang diberikan sesuai dengan RKPM?</p>
             </div>
             <div class="box-body">
-                <br>
-                <div> 
-                <div class="col-md-4">
+                    <div id="chart_materi"></div>               
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="box-header">
+            <p>2. Apakah waktu pembelajaran digunakan dengan baik?</p>
+            </div>
+            <div class="box-body">
+                    <div id="chart_waktu"></div>               
+            </div>
+        </div>
+        
+        <div class="box">
+            <div class="box-header">
+            <p>3. Apakah bentuk dan metode pembelajaran yang digunakan sesuai dengan RKPM?</p>
+            </div>
+            <div class="box-body">
+                    <div id="chart_metode"></div>               
+            </div>
+        </div>
 
-                
-                </div> 
+        <div class="box">
+            <div class="box-header">
+            <p>4. Apakah pengalaman belajar yang didapat mahasiswa sesuai dengan RKPM?</p>
+            </div>
+            <div class="box-body">
+                    <div id="chart_pengalaman"></div>               
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-header">
+            <p>5. Apakah media pembelajaran yang digunakan sesuai dengan RKPM?</p>
+            </div>
+            <div class="box-body">
+                    <div id="chart_media"></div>               
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="box-header">
+            <p>Tuliskan kesan dan saran Anda untuk mata kuliah ini</p>
+            </div>
+            <div class="box-body">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>             
             </div>
         </div>
         
