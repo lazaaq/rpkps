@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dosen;
 
 use App\Http\Controllers\Controller;
+use App\Models\Course;
 use App\Models\Rpkpm;
 use App\Models\Rpkps;
 use Illuminate\Http\Request;
@@ -10,17 +11,15 @@ use Illuminate\Http\Request;
 class RpkpmController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $rpkpms) = initAPI();
-
-        $rpkps = Rpkps::with('course', 'semester')->get();
-        if($rpkps) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = config('constants.response.statusCode.success.getAll');
-        } else {
+        $rpkpms = Rpkpm::with('rpkps.course', 'rpkps.semester')->get();
+        $courses = Course::all(['id', 'name']);
+        if(!$rpkpms) {
             $message = config('constants.response.message.failed.getAll');
-            $statusCode = config('constants.response.statusCode.failed.getAll');            
+            $statusCode = config('constants.response.statusCode.failed.getAll');  
+            return responseAPI($message, $statusCode);
         }
-        return responseAPI($message, $statusCode, $rpkps);
+
+        return view('dosen.rpkpm.v_rpkpm', compact('rpkpms', 'courses'));
     }
 
     public function show($id) {
