@@ -15,13 +15,13 @@ class SemesterSeeder extends Seeder
      */
     public function run()
     {
-        Semester::factory()->count(1)->create(['name' => 'Semester 1']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 2']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 3']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 4']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 5']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 6']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 7']);
-        Semester::factory()->count(1)->create(['name' => 'Semester 8']);
+        Semester::factory()->count(1)->create(['name' => 'Semester 1', 'is_genap' => false]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 2', 'is_genap' => true]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 3', 'is_genap' => false]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 4', 'is_genap' => true]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 5', 'is_genap' => false]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 6', 'is_genap' => true]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 7', 'is_genap' => false]);
+        Semester::factory()->count(1)->create(['name' => 'Semester 8', 'is_genap' => true]);
     }
 }
