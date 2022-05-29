@@ -25,17 +25,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($rpkps as $rpkps_item)
                             <tr>
-                                <td>{{$no++}}</td>
-                                <td>V3KI3103</td>
-                                <td>Keamanan Sistem Informasi</td>
-                                <td>2</td>
-                                <td>Genap</td>
-                                <td>Wajib</td>
-                                <td>-</td>
-                                <td><span type="button" class="label label-warning btn-xs">Edit</span></td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $rpkps_item->course->code }}</td>
+                                <td>{{ $rpkps_item->course->name }}</td>
+                                <td>{{ $rpkps_item->course->sks }}</td>
+                                <td>@if($rpkps_item->semester->is_genap) Genap @else Ganjil @endif</td>
+                                <td>@if($rpkps_item->course->is_wajib) Wajib @else Optional @endif</td>
+                                <td>@if($rpkps_item->course->prerequisite) {{ $courses->find($rpkps_item->course->prerequisite)->name }}@else - @endif</td>
+                                <td><a href="{{ route('dosen.rpkps.show', $rpkps_item->id) }}" class="label label-warning btn-xs">Edit</a></td>
                             </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

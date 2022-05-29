@@ -67,17 +67,17 @@ Route::prefix('kaprodi')->group(function () {
     // });
 });
 
-// // DOSEN
-// Route::prefix('dosen')->group(function () {
-//     Route::prefix('rpkps')->group(function () {
-//         Route::get('', [RpkpsController::class, 'index']);
-//         Route::get('{id}', [RpkpsController::class, 'show']);
-//     });
-    // Route::prefix('rpkpm')->group(function () {
-    //     Route::get('', [RpkpmController::class, 'index']);
-    //     Route::get('{id}', [RpkpmController::class, 'show']);
-    // });
-// });
+// DOSEN
+Route::prefix('dosen')->group(function () {
+    Route::prefix('rpkps')->group(function () {
+        Route::get('', [RpkpsController::class, 'index'])->name('dosen.rpkps.index');
+        Route::get('{id}', [RpkpsController::class, 'show'])->name('dosen.rpkps.show');
+    });
+    Route::prefix('rpkpm')->group(function () {
+        Route::get('', [RpkpmController::class, 'index'])->name('dosen.rpkpm.index');
+        Route::get('{id}', [RpkpmController::class, 'show'])->name('dosen.rpkpm.show');
+    });
+});
 
 // AKADEMIK
 Route::prefix('akademik')->group(function () {

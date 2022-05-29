@@ -64,13 +64,13 @@
             <i class="px-nav-icon fa fa-calendar"></i> <span>Perkuliahan (mhs)</span>
         </a>
     </li>
-    <li class="{{ request() -> is('rpkps') ? 'active' : '' }}">
-        <a href="/rpkps">
+    <li class="{{ request() -> is('dosen/rpkps') ? 'active' : '' }}">
+        <a href="/dosen/rpkps">
             <i class="fa fa-list-ul"></i> <span>RPKPS</span>
         </a>
     </li>
-    <li class="{{ request() -> is('rpkpm') ? 'active' : '' }}">
-        <a href="/rpkpm">
+    <li class="{{ request() -> is('dosen/rpkpm') ? 'active' : '' }}">
+        <a href="/dosen/rpkpm">
             <i class="fa fa-list-ul"></i> <span>RPKPM</span>
         </a>
     </li>
