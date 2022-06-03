@@ -21,7 +21,7 @@ class LearningGoalCourseController extends Controller
         $learningGoalSikap = LearningGoal::where('component', 'sikap')->get();
         $learningGoalPP = LearningGoal::where('component', 'pp')->get();
         $learningGoalKK = LearningGoal::where('component', 'kk')->get();
-        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan umum')->get();
+        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan')->get();
         
         return view('kaprodi.pemetaancpl.v_pemetaancpl', compact('learningGoalCourse', 'learningGoal', 'learningGoalSikap', 'learningGoalPP', 'learningGoalKK', 'learningGoalKeterampilan'));
     }
@@ -37,7 +37,7 @@ class LearningGoalCourseController extends Controller
         $learningGoalSikap = LearningGoal::where('component', 'sikap')->get();
         $learningGoalPP = LearningGoal::where('component', 'pp')->get();
         $learningGoalKK = LearningGoal::where('component', 'kk')->get();
-        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan umum')->get();
+        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan')->get();
         
         return view('kaprodi.pemetaancpl.v_editpemetaancpl', compact('learningGoalCourse', 'learningGoal', 'learningGoalSikap', 'learningGoalPP', 'learningGoalKK', 'learningGoalKeterampilan'));
     }
