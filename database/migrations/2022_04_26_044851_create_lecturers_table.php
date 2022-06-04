@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('nip');
             $table->string('email');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
