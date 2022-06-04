@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Lecturer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Env;
 
 class LecturerController extends Controller
 {
@@ -23,9 +24,9 @@ class LecturerController extends Controller
 
     public function store(Request $request) {
         $validator = Validator::make($request->all(), [
+            'nip' => 'required|string|max:20|unique:lecturers,nip',
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:lecturers,email',
-            'nip' => 'required|string|max:20|unique:lecturers,nip',
             'photo' => 'required',
         ]);
         if ($validator->fails()) {
@@ -38,23 +39,31 @@ class LecturerController extends Controller
         $lecturer->email = $request->email;
         $lecturer->nip = $request->nip;
 
-        $photoName = uploadImageBase64($request->photo, env('ASSET_LECTURER_PHOTO'), $request->nip);
-        $lecturer->photo = $photoName;
-
+        $filename = uploadImage($request, 'image/lecturer/photo', $lecturer->name);
+        $lecturer->photo = $filename;
+        
         $createLecturer = $lecturer->save();
 
-        if($createLecturer) {
+        if(!$createLecturer) {
             return config('constants.response.message.failed.create');
         }
         return redirect()->route('akademik.dosen.index');
     }
 
+    public function edit($id) {
+        $lecturer = Lecturer::find($id);
+        if (!$lecturer) {
+            return config('constants.response.message.failed.notFound');
+        }
+        return view('akademik.dosen.v_editdosen', compact('lecturer'));
+    }
+
     public function update(Request $request, $id) {
         // validation
         $validator = Validator::make($request->all(), [
-            'name' => 'string|max:255',
-            'email' => 'email',
-            'nip' => 'string|max:20',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'nip' => 'required|string|max:20',
         ]);
         if ($validator->fails()) {
             $message = $validator->errors();
@@ -69,21 +78,12 @@ class LecturerController extends Controller
 
         // update the photo
         if ($request->has('photo')) {
-            $photoName = uploadImageBase64($request->photo, env('ASSET_LECTURER_PHOTO'), $request->nip);
-            if (!$photoName) {
-                return config('constants.response.message.failed.uploadImage');
-            }
+            $filename = uploadImage($request, 'image/lecturer/photo', $lecturer->name);
             
-            $pathOldPhoto = 'storage/' . env('ASSET_LECTURER_PHOTO') . $lecturer->getRawOriginal('photo');
-            $deleteImage = deleteImage($pathOldPhoto);
-            if (!$deleteImage) {
-                return $pathOldPhoto;
-                $photoPath = env('ASSET_LECTURER_PHOTO') . $photoName;
-                deleteImage($photoPath);
-                $message = config('constants.response.message.failed.deleteImage');
-                return $message;
-            }
-            $lecturer->photo = $photoName; // if pass all the process, then update the photo
+            $pathOldPhoto = 'image/lecturer/photo/' . $lecturer->getRawOriginal('photo');
+            deleteImage($pathOldPhoto);
+            
+            $lecturer->photo = $filename;
         }
 
         $lecturer->name = $request->name ?? $lecturer->name;
@@ -104,11 +104,8 @@ class LecturerController extends Controller
             return config('constants.response.message.failed.getOne', ['id' => $id]);
         }
 
-        $pathPhoto = 'storage/' . env('ASSET_LECTURER_PHOTO') . $lecturer->photo;
-        $deleteImage = deleteImage($pathPhoto);
-        if (!$deleteImage) {
-            return config('constants.response.message.failed.deleteImage');
-        }
+        $pathOldPhoto = 'image/lecturer/photo/' . $lecturer->getRawOriginal('photo');
+        deleteImage($pathOldPhoto);
 
         $deleteLecturer = $lecturer->delete();
         if (!$deleteLecturer) {

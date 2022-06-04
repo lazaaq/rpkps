@@ -127,7 +127,7 @@ Route::get('/', function () {
 // route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 // route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 // route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
-route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
+// route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
 
 // Akademik
@@ -137,8 +137,8 @@ route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
 // route::view('/semester', 'akademik.semester.v_semester');
 // route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
-route::view('/adddosen', 'akademik.dosen.v_adddosen');
-route::view('/editdosen', 'akademik.dosen.v_editdosen');
+// route::view('/adddosen', 'akademik.dosen.v_adddosen');
+// route::view('/editdosen', 'akademik.dosen.v_editdosen');
 route::view('/addkaprodi', 'akademik.kaprodi.v_addkaprodi');
 route::view('/editkaprodi', 'akademik.kaprodi.v_editkaprodi');
 // route::view('/addplotdosen', 'akademik.plottingdosen.v_addplotdosen');

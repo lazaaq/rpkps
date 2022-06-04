@@ -29,8 +29,9 @@ class Lecturer extends Model
     }
 
     public function getPhotoAttribute($value) {
+        $path = 'http://localhost:8000/image/lecturer/photo/';
         if ($value && strpos($value, 'http') !== 0) {
-            return env('ASSET_URL') . env('ASSET_LECTURER_PHOTO') . $value;
+            return $path . $value;
         } else {
             return $value;
         }

@@ -53,5 +53,9 @@ return [
                 'invalid' => 400,
             ]
         ]
+    ],
+    'env' => [
+        'asset_url' => 'http://127.0.0.1:8000',
+        'asset_lecturer_photo' => 'image/lecturer/photo',
     ]
 ];

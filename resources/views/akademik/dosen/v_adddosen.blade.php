@@ -3,7 +3,7 @@
 @section('title', 'Dosen')
 
 @section('content')
-<form action="/dosen/insert" method="POST" enctype="multipart/form-data">
+<form action="{{ route('akademik.dosen.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-xs-6">
@@ -16,16 +16,16 @@
                         <label>NIP/NIKA</label>
                         <input name="nip" class="form-control" value="{{ old('nip') }}">
                         <div class="text-danger">
-                            @error('nama_kaprodi')
+                            @error('nip')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Nama</label>
-                        <input name="nama" class="form-control" value="{{ old('nama') }}">
+                        <input name="name" class="form-control" value="{{ old('nama') }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('name')
                             {{ $message }}
                             @enderror
                         </div>
@@ -34,25 +34,23 @@
                         <label>Email</label>
                         <input name="email" class="form-control" value="{{ old('email') }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('email')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Foto</label>
-                        <input type="fi" class="form-control" value="{{ old('foto') }}">
+                        <input type="file" name="photo" class="form-control" value="{{ old('foto') }}">
                         <div class="text-danger">
-                            @error('prodi')
+                            @error('photo')
                             {{ $message }}
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <a href="/dosen">
-                            <button type="button" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
-                        </a>
-                        <a href="">
+                        <button type="submit" class="btn" style="background-color: #007BFF; color: white; margin-right: 6px;">Simpan</button>
+                        <a href="{{ route('akademik.dosen.index') }}">
                             <button type="button" class="btn" style="background-color: white; border-color: #f44336; color: red;">Batal</button>
                         </a>
                     </div>
