@@ -61,10 +61,11 @@ Route::prefix('kaprodi')->group(function () {
     Route::prefix('mata-kuliah')->group(function () {
         Route::get('', [CourseController::class, 'index']);
     });
-    // Route::prefix('cpl-mata-kuliah')->group(function () {
-    //     Route::get('', [LearningGoalCourseController::class, 'index']);
-    //     Route::put('', [LearningGoalCourseController::class, 'update']);
-    // });
+    Route::prefix('cpl-mata-kuliah')->group(function () {
+        Route::get('', [LearningGoalCourseController::class, 'index'])->name('kaprodi.cpl-mata-kuliah.index'); // kaprodi.cpl-mata-kuliah.v_cpl-mata-kuliah
+        Route::get('edit', [LearningGoalCourseController::class, 'edit'])->name('kaprodi.cpl-mata-kuliah.edit'); // kaprodi.pemeteaancpl.v_editpemetaancpl
+        Route::put('', [LearningGoalCourseController::class, 'update'])->name('kaprodi.cpl-mata-kuliah.update');
+    });
 });
 
 // DOSEN
@@ -125,8 +126,8 @@ Route::get('/', function () {
 });
 // route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 // route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
-route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
-route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
+// route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
+// route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
 
 // Akademik
@@ -136,8 +137,8 @@ route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/semestergenap', 'akademik.plottingdosen.v_semestergenap');
 // route::view('/semester', 'akademik.semester.v_semester');
 // route::view('/mkditawarkan', 'akademik.semester.v_mkditawarkan');
-route::view('/adddosen', 'akademik.dosen.v_adddosen');
-route::view('/editdosen', 'akademik.dosen.v_editdosen');
+// route::view('/adddosen', 'akademik.dosen.v_adddosen');
+// route::view('/editdosen', 'akademik.dosen.v_editdosen');
 route::view('/addkaprodi', 'akademik.kaprodi.v_addkaprodi');
 route::view('/editkaprodi', 'akademik.kaprodi.v_editkaprodi');
 // route::view('/addplotdosen', 'akademik.plottingdosen.v_addplotdosen');

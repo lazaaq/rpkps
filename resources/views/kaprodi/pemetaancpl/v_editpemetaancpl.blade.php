@@ -20,134 +20,55 @@
                             <tr>
                                 <th rowspan="2">No</th>
                                 <th rowspan="2">Mata Kuliah</th>
-                                <th colspan="10" style="text-align: center;">Sikap</th>
-                                <th colspan="3" style="text-align: center;">PP</th>
-                                <th colspan="3" style="text-align: center;">KK</th>
-                                <th colspan="3" style="text-align: center;">Ketrampilan Umum</th>
+                                <th colspan="{{ $learningGoalSikap->count() }}" style="text-align: center;">Sikap</th>
+                                <th colspan="{{ $learningGoalPP->count() }}" style="text-align: center;">PP</th>
+                                <th colspan="{{ $learningGoalKK->count() }}" style="text-align: center;">KK</th>
+                                <th colspan="{{ $learningGoalKeterampilan->count() }}" style="text-align: center;">Ketrampilan Umum</th>
+                                <th rowspan="2">Aksi</th>
                             </tr>
                             <tr>
-                                <th>S1</th>
-                                <th>S2</th>
-                                <th>S3</th>
-                                <th>S4</th>
-                                <th>S5</th>
-                                <th>S6</th>
-                                <th>S7</th>
-                                <th>S8</th>
-                                <th>S9</th>
-                                <th>S10</th>
-                                <th>PP1</th>
-                                <th>PP2</th>
-                                <th>PP3</th>
-                                <th>KK1</th>
-                                <th>KK2</th>
-                                <th>KK3</th>
-                                <th>KU1</th>
-                                <th>KU2</th>
-                                <th>KU3</th>
+                                @foreach ($learningGoalSikap as $item)
+                                <th>{{ $item->code }}</th>
+                                @endforeach
+                                @foreach ($learningGoalPP as $item)
+                                <th>{{ $item->code }}</th>
+                                @endforeach
+                                @foreach ($learningGoalKK as $item)
+                                <th>{{ $item->code }}</th>
+                                @endforeach
+                                @foreach ($learningGoalKeterampilan as $item)
+                                <th>{{ $item->code }}</th>
+                                @endforeach
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($learningGoalCourse as $cpl)
                             <tr>
-                                <td>{{$no++}}</td>
-                                <td>Pengantar Teknologi Informasi</td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $cpl[0]->course->name }}</td>
+                                @php
+                                    $cpl_count = 0;   
+                                @endphp
+                                @for( $i = 0; $i < $learningGoal->count(); $i++)
+                                    @if( $cpl_count < $cpl->count() && $learningGoal[$i]->code == $cpl[$cpl_count]->learningGoal->code )
+                                        <td>{{ $cpl[$cpl_count]->percentage }}</td>
+                                        @php
+                                            $cpl_count++;
+                                        @endphp
+                                    @else 
+                                        <td>-</td>
+                                    @endif
+                                @endfor
                                 <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group" style="width: 50px;">
-                                        <input name="name" class="form-control" value="{{ old('name') }}">
-                                    </div>
+                                    <a href="{{ route('kaprodi.cpl-mata-kuliah.edit') }}">
+                                        <button type="button" class="btn btn-xs btn-warning">
+                                            <span>Edit</span>
+                                        </button>
+                                    </a>
                                 </td>
                             </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

@@ -26,8 +26,8 @@
             <i class="fa fa-book"></i> <span>Mata Kuliah</span>
         </a>
     </li>
-    <li class="{{ request() -> is('pemetaancpl') ? 'active' : '' }}">
-        <a href="/pemetaancpl">
+    <li class="{{ request() -> is('kaprodi/cpl-mata-kuliah') ? 'active' : '' }}">
+        <a href="/kaprodi/cpl-mata-kuliah">
             <i class="fa fa-th"></i> <span>Pemetaan CPL</span>
         </a>
     </li>

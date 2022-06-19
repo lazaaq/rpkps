@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/adddosen">
+                <a href="{{ route('akademik.dosen.create') }}">
                     <button type="button" class="btn" style="background-color: #007BFF; color: white;">
                         <i class="fa fa-plus-square" style="margin-right:10px;"></i><span>Tambah Dosen</span>
                     </button>
@@ -30,7 +30,9 @@
                             @foreach ($lecturer as $item)
                             <tr>
                                 <td width="50px">{{$loop->index + 1}}</td>
-                                <td width="200px"></td>
+                                <td width="200px">
+                                    <img src="{{ $item->photo }}" alt="" style="width: 100px; height: auto;">
+                                </td>
                                 <td width="200px">{{ $item->name }}</td>
                                 <td width="200px">{{ $item->nip }}</td>
                                 <td width="200px">{{ $item->email }}</td>

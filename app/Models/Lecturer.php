@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lecturer extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     public function lecturerPlotting()
     {
@@ -29,8 +28,9 @@ class Lecturer extends Model
     }
 
     public function getPhotoAttribute($value) {
+        $path = 'http://localhost:8000/image/lecturer/photo/';
         if ($value && strpos($value, 'http') !== 0) {
-            return env('ASSET_URL') . env('ASSET_LECTURER_PHOTO') . $value;
+            return $path . $value;
         } else {
             return $value;
         }

@@ -2,7 +2,7 @@
 
 use App\Models\Semester;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 function responseAPI($message = 'Error Default', $statusCode = 500, $data = null) {
@@ -32,14 +32,23 @@ function uploadImageBase64($image64, $path, $photoName) {
   }
 }
 
+function uploadImage(Request $request, $path, $filename) {
+  $image = $request->file('photo');
+  $filename = time() . '_' . $filename . '.' . $image->getClientOriginalExtension();
+  $insertImage = $image->move($path, $filename);
+  if(!$insertImage) {
+    return responseAPI(config('constants.response.message.failed.uploadImage'), config('constants.response.statusCode.failed.uploadImage'));
+  }
+  return $filename;
+}
+
 function deleteImage($path) {
   if(File::exists($path)){
     $deleteImage = File::delete($path);
-    if($deleteImage) {
-      return true;
+    if(!$deleteImage) {
+      return responseAPI(config('constants.response.message.failed.deleteImage'), config('constants.response.statusCode.failed.deleteImage'));
     }
   }
-  return false;
 }
 
 function menuPlottingDosen() {

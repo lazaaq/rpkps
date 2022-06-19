@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Kaprodi;
 
 use App\Http\Controllers\Controller;
+use App\Models\LearningGoal;
 use App\Models\LearningGoalCourse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,20 +11,35 @@ use Illuminate\Support\Facades\DB;
 class LearningGoalCourseController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $learningGoalCourse) = initAPI();
-
-        $learningGoalCourse = LearningGoalCourse::all();
-        $learningGoalCourse = $learningGoalCourse->sortBy('course_id')->groupBy('course_id');
-        foreach ($learningGoalCourse as $key => $value) {
-            $learningGoalCourse[$key] = $value->sortBy('learning_goal_id');
-        }
-        if($learningGoalCourse) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = 200;
-        } else {
+        $learningGoalCourse = LearningGoalCourse::with('learningGoal', 'course')->get()->groupBy('course_id');
+        if(!$learningGoalCourse) {
             $message = config('constants.response.message.failed.notFound');
+            $statusCode = 500;
+            return responseAPI($message, $statusCode);
         }
-        return responseAPI($message, $statusCode, $learningGoalCourse);
+        $learningGoal = LearningGoal::all();
+        $learningGoalSikap = LearningGoal::where('component', 'sikap')->get();
+        $learningGoalPP = LearningGoal::where('component', 'pp')->get();
+        $learningGoalKK = LearningGoal::where('component', 'kk')->get();
+        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan')->get();
+        
+        return view('kaprodi.pemetaancpl.v_pemetaancpl', compact('learningGoalCourse', 'learningGoal', 'learningGoalSikap', 'learningGoalPP', 'learningGoalKK', 'learningGoalKeterampilan'));
+    }
+
+    public function edit() {
+        $learningGoalCourse = LearningGoalCourse::with('learningGoal', 'course')->get()->groupBy('course_id');
+        if(!$learningGoalCourse) {
+            $message = config('constants.response.message.failed.notFound');
+            $statusCode = 500;
+            return responseAPI($message, $statusCode);
+        }
+        $learningGoal = LearningGoal::all();
+        $learningGoalSikap = LearningGoal::where('component', 'sikap')->get();
+        $learningGoalPP = LearningGoal::where('component', 'pp')->get();
+        $learningGoalKK = LearningGoal::where('component', 'kk')->get();
+        $learningGoalKeterampilan = LearningGoal::where('component', 'keterampilan')->get();
+        
+        return view('kaprodi.pemetaancpl.v_editpemetaancpl', compact('learningGoalCourse', 'learningGoal', 'learningGoalSikap', 'learningGoalPP', 'learningGoalKK', 'learningGoalKeterampilan'));
     }
 
     public function update(Request $request) {

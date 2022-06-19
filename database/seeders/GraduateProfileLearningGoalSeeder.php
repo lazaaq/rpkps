@@ -17,8 +17,36 @@ class GraduateProfileLearningGoalSeeder extends Seeder
      */
     public function run()
     {
-        LearningGoal::factory()->count(10)->create();
+        // Learning Goal Seeder
+        for($i = 0; $i < 10; $i++ ) {
+            LearningGoal::factory()->count(1)->create([
+                'code' => 'S' . ($i + 1),
+                'component' => 'sikap'
+            ]);
+        }
+        for($i = 0; $i < 3; $i++ ) {
+            LearningGoal::factory()->count(1)->create([
+                'code' => 'PP' . ($i + 1),
+                'component' => 'pp'
+            ]);
+        }
+        for($i = 0; $i < 3; $i++ ) {
+            LearningGoal::factory()->count(1)->create([
+                'code' => 'KK' . ($i + 1),
+                'component' => 'kk'
+            ]);
+        }
+        for($i = 0; $i < 3; $i++ ) {
+            LearningGoal::factory()->count(1)->create([
+                'code' => 'KU' . ($i + 1),
+                'component' => 'keterampilan'
+            ]);
+        }
+
+        // Graduate Profile Seeder
         GraduateProfile::factory()->count(12)->create();
+
+        // Graduate Profile Learning Goal Seeder
         GraduateProfileLearningGoal::factory()->count(30)->create();
     }
 }
