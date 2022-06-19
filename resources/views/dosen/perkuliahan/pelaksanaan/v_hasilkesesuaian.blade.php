@@ -79,8 +79,8 @@
             <p>Tuliskan kesan dan saran Anda untuk mata kuliah ini</p>
             </div>
             <div class="box-body">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>             
+                <p style="background-color:#F4F6F9;border: 1px solid #D7D7D7; padding:10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                <p style="background-color:#F4F6F9;border: 1px solid #D7D7D7; padding:10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. When an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>             
             </div>
         </div>
         

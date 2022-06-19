@@ -10,20 +10,27 @@ use Illuminate\Support\Facades\DB;
 class GraduateProfileLearningGoalController extends Controller
 {
     public function index() {
-        list($message, $statusCode, $graduateProfileLearningGoal) = initAPI();
-
-        $graduateProfileLearningGoal = GraduateProfileLearningGoal::all();
-        $graduateProfileLearningGoal = $graduateProfileLearningGoal->sortBy('graduate_profile_id')->groupBy('graduate_profile_id');
-        foreach ($graduateProfileLearningGoal as $key => $value) {
-            $graduateProfileLearningGoal[$key] = $value->sortBy('learning_goal_id');
-        }
-        if ($graduateProfileLearningGoal) {
-            $message = config('constants.response.message.success.getAll');
-            $statusCode = 200;
-        } else {
+        $graduateProfileLearningGoals = GraduateProfileLearningGoal::with('graduateProfile', 'learningGoal')->get();
+        // $graduateProfileLearningGoal = $graduateProfileLearningGoal->sortBy('graduate_profile_id')->groupBy('graduate_profile_id');
+        // foreach ($graduateProfileLearningGoal as $key => $value) {
+        //     $graduateProfileLearningGoal[$key] = $value->sortBy('learning_goal_id');
+        // }
+        if (!$graduateProfileLearningGoals) {
             $message = config('constants.response.message.failed.notFound');
+            $statusCode = 200;
+            return responseAPI($message, $statusCode);
         }
-        return responseAPI($message, $statusCode, $graduateProfileLearningGoal);
+        return view('kaprodi.pemetaanprofil.v_pemetaanprofil', compact('graduateProfileLearningGoals'));
+    }
+
+    public function edit() {
+        $graduateProfileLearningGoals = GraduateProfileLearningGoal::with('graduateProfile', 'learningGoal')->get();
+        if (!$graduateProfileLearningGoals) {
+            $message = config('constants.response.message.failed.notFound');
+            $statusCode = 200;
+            return responseAPI($message, $statusCode);
+        }
+        return view('kaprodi.pemetaanprofil.v_editpemetaanprofil', compact('graduateProfileLearningGoals'));
     }
 
     public function update(Request $request) {

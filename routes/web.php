@@ -53,10 +53,11 @@ Route::prefix('kaprodi')->group(function () {
         Route::put('{id}', [LearningGoalController::class, 'update'])->name('kaprodi.cpl.update');
         Route::delete('{id}', [LearningGoalController::class, 'destroy'])->name('kaprodi.cpl.delete');
     });
-    // Route::prefix('cpl-profil-lulusan')->group(function () {
-    //     Route::get('', [GraduateProfileLearningGoalController::class, 'index']);
-    //     Route::put('', [GraduateProfileLearningGoalController::class, 'update']);
-    // });
+    Route::prefix('cpl-profil-lulusan')->group(function () {
+        Route::get('', [GraduateProfileLearningGoalController::class, 'index'])->name('kaprodi.cpl-profil-lulusan.index'); // kaprodi.cpl-profil-lulusan.v_cpl-profil-lulusan
+        Route::get('edit', [GraduateProfileLearningGoalController::class, 'edit'])->name('kaprodi.cpl-profil-lulusan.edit'); // kaprodi.pemetaanprofil.v_editpemetaanprofil
+        Route::put('', [GraduateProfileLearningGoalController::class, 'update'])->name('kaprodi.cpl-profil-lulusan.update');
+    });
     Route::prefix('mata-kuliah')->group(function () {
         Route::get('', [CourseController::class, 'index']);
     });
@@ -66,17 +67,17 @@ Route::prefix('kaprodi')->group(function () {
     // });
 });
 
-// // DOSEN
-// Route::prefix('dosen')->group(function () {
-//     Route::prefix('rpkps')->group(function () {
-//         Route::get('', [RpkpsController::class, 'index']);
-//         Route::get('{id}', [RpkpsController::class, 'show']);
-//     });
-    // Route::prefix('rpkpm')->group(function () {
-    //     Route::get('', [RpkpmController::class, 'index']);
-    //     Route::get('{id}', [RpkpmController::class, 'show']);
-    // });
-// });
+// DOSEN
+Route::prefix('dosen')->group(function () {
+    Route::prefix('rpkps')->group(function () {
+        Route::get('', [RpkpsController::class, 'index'])->name('dosen.rpkps.index');
+        Route::get('{id}', [RpkpsController::class, 'show'])->name('dosen.rpkps.show');
+    });
+    Route::prefix('rpkpm')->group(function () {
+        Route::get('', [RpkpmController::class, 'index'])->name('dosen.rpkpm.index');
+        Route::get('{id}', [RpkpmController::class, 'show'])->name('dosen.rpkpm.show');
+    });
+});
 
 // AKADEMIK
 Route::prefix('akademik')->group(function () {
@@ -120,10 +121,10 @@ Route::prefix('mahasiswa')->group(function () {
 });
 
 Route::get('/', function () {
-    return 'Index Page';
+    return redirect('/kaprodi/kurikulum');
 });
-route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
-route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
+// route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
+// route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
 route::view('/editpemetaancpl', 'kaprodi.pemetaancpl.v_editpemetaancpl');
 // route::view('/matakuliah', 'kaprodi.matakuliah.v_matakuliah');
@@ -148,13 +149,12 @@ route::view('/addsemester', 'akademik.semester.v_addsemester');
 // route::view('/formInput', 'mahasiswa.v_formInput');
 
 // Dosen
-route::view('/rpkps', 'dosen.rpkps.v_rpkps');
+// route::view('/rpkps', 'dosen.rpkps.v_rpkps');
 route::view('/pelaksanaankuliah', 'dosen.perkuliahan.pelaksanaan.v_pelaksanaankuliah');
 route::view('/pkuliahmingguan', 'dosen.perkuliahan.pelaksanaan.v_pkuliahmingguan');
 route::view('/laporan', 'dosen.perkuliahan.laporan.v_laporan');
 route::view('/laporanmingguan', 'dosen.perkuliahan.laporan.v_laporanmingguan');
-route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');
-route::view('/editrpkpm', 'dosen.rpkpm.v_editrpkpm');
+// route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');
 route::view('/formTambahLaporan', 'dosen.perkuliahan.laporan.v_form_tambahdata');
 route::view('/hasilKesesuaian', 'dosen.perkuliahan.pelaksanaan.v_hasilkesesuaian');
 

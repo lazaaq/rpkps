@@ -67,91 +67,145 @@
         </div>
 
         <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">Keterangan</h3>
-            </div>
+            <div class="box-header"></div>
             <div class="box-body">
-                <h5><b>Penyesuaian dosen : </b></h5>
-                <p>Dikarenakan materi sebelumnya yaitu Ancaman-ancaman keamanan informasi belum selesai maka pembelajaran pada pertemuan ini melanjutkan materi sebelumnya baru lanjut ke materi berikutnya.</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="box-header">  
-            </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <p>1. Apakah materi pembelajaran yang diberikan sesuai dengan RKPM?</p>
+                <div class="form-group">
+                    <p>1. Apakah materi pembelajaran yang diberikan sesuai dengan RKPM?</p>
                         <div class="radio">
                             <label>
                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
                             Ya
                             </label>
                         </div>
+                        <div style="display:flex;">
                         <div class="radio">
                             <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
                             Tidak
                             </label>
                         </div>
-                    </div>
-                </div>
+                            <div class="col-sm-5">
+                                <input type="text" style="border-top:none; border-right:none;border-left:none;" class="form-control" placeholder="...">
+                            </div>     
+                        </div>
+                </div>               
             </div>
-        </div>  
-        </div> 
-
+        </div>
+        
         <div class="box">
-            <div class="box-header">  
+            <div class="box-header"></div>
+            <div class="box-body">
+                <div class="form-group">
+                    <p>2. Apakah waktu pembelajaran digunakan dengan baik?</p>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios2" id="optionsRadios2" value="option1" checked="">
+                            Ya
+                            </label>
+                        </div>
+                        <div style="display:flex;">
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios2" id="optionsRadios2" value="option1" checked="">
+                            Tidak
+                            </label>
+                        </div>
+                            <div class="col-sm-5">
+                                <input type="text" style="border-top:none; border-right:none;border-left:none;" class="form-control" placeholder="...">
+                            </div>     
+                        </div>
+                </div>                              
             </div>
+        </div>
+        
+        <div class="box">
+            <div class="box-header"></div>
             <div class="box-body">
                 <div class="form-group">
                 <p>3. Apakah bentuk dan metode pembelajaran yang digunakan sesuai dengan RKPM?</p>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Ya
-                        </label>
-                        </div>
                         <div class="radio">
-                        <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Tidak
-                        </label>
+                            <label>
+                            <input type="radio" name="optionsRadios3" id="optionsRadios3" value="option1" checked="">
+                            Ya
+                            </label>
                         </div>
-                    </div>
-                </div>
+                        <div style="display:flex;">
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios3" id="optionsRadios3" value="option1" checked="">
+                            Tidak
+                            </label>
+                        </div>
+                            <div class="col-sm-5">
+                                <input type="text" style="border-top:none; border-right:none;border-left:none;" class="form-control" placeholder="...">
+                            </div>     
+                        </div>
+                </div>                                  
             </div>
-        </div> 
         </div>
 
         <div class="box">
-            <div class="box-header">  
-            </div>
+            <div class="box-header"></div>
             <div class="box-body">
                 <div class="form-group">
-                <p>3. Apakah bentuk dan metode pembelajaran yang digunakan sesuai dengan RKPM?</p>
-                    <div class="radio">
-                        <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Ya
-                        </label>
-                        </div>
+                    <p>4. Apakah pengalaman belajar yang didapat mahasiswa sesuai dengan RKPM?</p>
                         <div class="radio">
-                        <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Tidak
-                        </label>
+                            <label>
+                            <input type="radio" name="optionsRadios4" id="optionsRadios4" value="option1" checked="">
+                            Ya
+                            </label>
                         </div>
-                    </div>
-                </div>
+                        <div style="display:flex;">
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios4" id="optionsRadios4" value="option1" checked="">
+                            Tidak
+                            </label>
+                        </div>
+                            <div class="col-sm-5">
+                                <input type="text" style="border-top:none; border-right:none;border-left:none;" class="form-control" placeholder="...">
+                            </div>     
+                        </div>
+                </div>                                 
             </div>
-        </div> 
         </div>
 
+        <div class="box">
+            <div class="box-header"></div>
+            <div class="box-body">
+                <div class="form-group">
+                    <p>5. Apakah media pembelajaran yang digunakan sesuai dengan RKPM?</p>
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios5" id="optionsRadios5" value="option1" checked="">
+                            Ya
+                            </label>
+                        </div>
+                        <div style="display:flex;">
+                        <div class="radio">
+                            <label>
+                            <input type="radio" name="optionsRadios5" id="optionsRadios5" value="option1" checked="">
+                            Tidak
+                            </label>
+                        </div>
+                            <div class="col-sm-5">
+                                <input type="text" style="border-top:none; border-right:none;border-left:none;" class="form-control" placeholder="...">
+                            </div>     
+                        </div>
+                </div>                                   
+            </div>
+        </div>
 
-
+        <div class="box">
+            <div class="box-header"></div>
+            <div class="box-body">
+                <div class="form-group">
+                    <p>Tuliskan kesan dan saran Anda untuk mata kuliah ini</p>
+                    <textarea class="form-control"  style="border-top:none; border-right:none;border-left:none;"></textarea>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
-
-
 @endsection

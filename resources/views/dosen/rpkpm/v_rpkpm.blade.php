@@ -21,22 +21,22 @@
                                 <th>Semester</th>
                                 <th>Status Mata Kuliah</th>
                                 <th>Mata Kuliah Prasyarat</th>
-                                <th>Edit RPKPM</th>
+                                <th>Edit RPKPS</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 1; ?>
+                            @foreach ($rpkpms as $rpkpm)
                             <tr>
-                                <td>{{$no++}}</td>
-                                <td>V3KI3103</td>
-                                <td>Keamanan Sistem Informasi</td>
-                                <td>2</td>
-                                <td>Genap</td>
-                                <td>Wajib</td>
-                                <td>-</td>
-                                <td><a href="/editrpkpm" class="btn btn-warning btn-sm ">
-                                                <span class="fa fa-fw fa-edit"></span></td>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $rpkpm->rpkps->course->code }}</td>
+                                <td>{{ $rpkpm->rpkps->course->name }}</td>
+                                <td>{{ $rpkpm->rpkps->course->sks }}</td>
+                                <td>@if($rpkpm->rpkps->semester->is_genap) Genap @else Ganjil @endif</td>
+                                <td>@if($rpkpm->rpkps->course->is_wajib) Wajib @else Optional @endif</td>
+                                <td>@if($rpkpm->rpkps->course->prerequisite) {{ $courses->find($rpkpm->rpkps->course->prerequisite)->name }}@else - @endif</td>
+                                <td><a href="{{ route('dosen.rpkpm.show', $rpkpm->id) }}" class="label label-warning btn-xs">Edit</a></td>
                             </tr>
+                            @endforeach
                     </table>
                 </div>
             </div>

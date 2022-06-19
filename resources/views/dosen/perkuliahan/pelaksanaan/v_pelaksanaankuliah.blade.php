@@ -9,7 +9,7 @@
             <div class="box-header with-border">
                 <div class="row form-group">
                     <label class="col-sm-1 control-label" style="text-align:left;">Semester</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-3">
                             <select class="form-control select2-hidden-accessible" name="sesiId" id="sesiId" tabindex="-1" aria-hidden="true">
                                 <option>Semester Genap 2021/2022</option>
                                 <option>Semester Gasal 2021/2022</option>

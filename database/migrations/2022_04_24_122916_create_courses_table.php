@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('study_program_id');
             $table->unsignedBigInteger('semester_id');
             $table->unsignedBigInteger('curriculum_id');
-            $table->unsignedBigInteger('prerequisite');
+            $table->unsignedBigInteger('prerequisite')->nullable();
             $table->string('code');
             $table->string('name');
             $table->integer('sks');
