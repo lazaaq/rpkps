@@ -34,7 +34,7 @@
                                 <td>@if($rpkpm->rpkps->semester->is_genap) Genap @else Ganjil @endif</td>
                                 <td>@if($rpkpm->rpkps->course->is_wajib) Wajib @else Optional @endif</td>
                                 <td>@if($rpkpm->rpkps->course->prerequisite) {{ $courses->find($rpkpm->rpkps->course->prerequisite)->name }}@else - @endif</td>
-                                <td><a href="{{ route('dosen.rpkpm.show', $rpkpm->id) }}" class="label label-warning btn-xs">Edit</a></td>
+                                <td><a href="/editrpkpm" class="label label-warning btn-xs">Edit</a></td>
                             </tr>
                             @endforeach
                     </table>
