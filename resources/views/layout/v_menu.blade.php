@@ -1,6 +1,7 @@
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
+    @if (checkRole('kaprodi'))
     <li class="{{ request() -> is('kaprodi/kurikulum') ? 'active' : '' }}">
         <a href="/kaprodi/kurikulum">
             <i class="fa fa-list-ul"></i> <span>Kurikulum</span>
@@ -31,6 +32,9 @@
             <i class="fa fa-th"></i> <span>Pemetaan CPL</span>
         </a>
     </li>
+    @endif
+
+    @if (checkRole('akademik'))
     <li class="{{ request() -> is('akademik/dosen') ? 'active' : '' }}">
         <a href="/akademik/dosen">
             <i class="fa fa-users"></i> <span>Dosen</span>
@@ -59,11 +63,9 @@
             @endforeach
         </ul>
     </li>
-    <li class="{{ request() -> is('mahasiswa/perkuliahan') ? 'active' : '' }}">
-        <a href="/mahasiswa/perkuliahan">
-            <i class="px-nav-icon fa fa-calendar"></i> <span>Perkuliahan (mhs)</span>
-        </a>
-    </li>
+    @endif
+
+    @if (checkRole('dosen'))
     <li class="{{ request() -> is('dosen/rpkps') ? 'active' : '' }}">
         <a href="/dosen/rpkps">
             <i class="fa fa-list-ul"></i> <span>RPKPS</span>
@@ -91,6 +93,15 @@
             <i class="fa fa-gear"></i> <span>Keluar</span>
         </a>
     </li>
+    @endif
+
+    @if (checkRole('mahasiswa'))
+    <li class="{{ request() -> is('mahasiswa/perkuliahan') ? 'active' : '' }}">
+        <a href="/mahasiswa/perkuliahan">
+            <i class="px-nav-icon fa fa-calendar"></i> <span>Perkuliahan (mhs)</span>
+        </a>
+    </li>
+    @endif
     <li class="header">LABELS</li>
     <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>

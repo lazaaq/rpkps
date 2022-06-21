@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Role;
 use App\Models\Semester;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 function responseAPI($message = 'Error Default', $statusCode = 500, $data = null) {
@@ -54,6 +56,15 @@ function deleteImage($path) {
 function menuPlottingDosen() {
   $semester = Semester::where('active', 1)->get();
   return $semester;
+}
+
+function checkRole($roleUser) {
+  $role = Role::where('rolename', $roleUser)->first();
+  if (Auth::user()->role_id == $role->id) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 ?>
