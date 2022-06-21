@@ -159,3 +159,7 @@ route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');
 route::view('/editrpkpm', 'dosen.rpkpm.v_editrpkpm');
 route::view('/formTambahLaporan', 'dosen.perkuliahan.laporan.v_form_tambahdata');
 route::view('/hasilKesesuaian', 'dosen.perkuliahan.pelaksanaan.v_hasilkesesuaian');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
