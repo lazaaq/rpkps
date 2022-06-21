@@ -26,13 +26,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [KurikulumController::class, 'index']);
-// Route::get('/kurikulum', [KurikulumController::class, 'index']);
-// Route::get('/kurikulum/add', [KurikulumController::class, 'add']);
-// Route::post('/kurikulum/insert', [KurikulumController::class, 'insert']);
-// Login
-Route::view('/login', 'v_login');
-
 // KAPRODI
 Route::prefix('kaprodi')->group(function () {
     Route::prefix('kurikulum')->group(function () {
