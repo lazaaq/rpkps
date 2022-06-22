@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Tahun</label>
+                        <label>Komponen</label>
                         <input name="component" class="form-control" value="{{ old('component') }}">
                         <div class="text-danger">
                             @error('component')

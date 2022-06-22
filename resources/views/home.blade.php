@@ -15,6 +15,20 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <div>
+                        @if(checkRole('kaprodi'))
+                            <a href="{{ route('kaprodi.kurikulum.index') }}">Kurikulum</a>
+                        @endif
+                        @if(checkRole('akademik'))
+                            <a href="{{ route('akademik.semester.index') }}">Semester</a>
+                        @endif
+                        @if(checkRole('dosen'))
+                            <a href="{{ route('dosen.rpkps.index') }}">RPKPS</a>
+                        @endif
+                        @if(checkRole('mahasiswa'))
+                            <a href="{{ route('mahasiswa.perkuliahan.index') }}">Perkuliahan</a>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
