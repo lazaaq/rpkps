@@ -34,8 +34,6 @@ class GraduateProfileLearningGoalController extends Controller
     }
 
     public function update(Request $request) {
-        list($message, $statusCode, $graduateProfileLearningGoal) = initAPI();
-        
         $statusTransaction = true;
         
         $count = count($request->all());
