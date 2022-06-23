@@ -7,14 +7,15 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/">
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Data</span>
-                    </button>
+                <button type="button" class="btn btn-warning" onclick="printDataTable()">
+                    <i class="fa fa-print" style="margin-right:10px;"></i><span>Cetak Data</span>
+                </button>
+                <a href="{{ route('kaprodi.cpl-mata-kuliah.edit') }}" class="btn btn-warning">
+                    <i class="fa fa-pencil-square-o" style="margin-right:10px;"></i><span>Edit</span>
                 </a>
             </div>
             <div class="box-body ">
-                <div class="card-body table-responsive p-0">
+                <div class="card-body table-responsive p-0" id="printableTable">
                     <table class="table table-striped text-nowrap table-bordered table-hover">
                         <thead>
                             <tr>
@@ -24,7 +25,6 @@
                                 <th colspan="{{ $learningGoalPP->count() }}" style="text-align: center;">PP</th>
                                 <th colspan="{{ $learningGoalKK->count() }}" style="text-align: center;">KK</th>
                                 <th colspan="{{ $learningGoalKeterampilan->count() }}" style="text-align: center;">Ketrampilan Umum</th>
-                                <th rowspan="2">Aksi</th>
                             </tr>
                             <tr>
                                 @foreach ($learningGoalSikap as $item)
@@ -45,7 +45,7 @@
                             @foreach ($learningGoalCourse as $cpl)
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>
-                                <td>{{ $cpl[0]->course->name }}</td>
+                                <td>{{ $cpl[0]->course ? $cpl[0]->course->name : '-' }}</td>
                                 @php
                                     $cpl_count = 0;   
                                 @endphp
@@ -59,13 +59,6 @@
                                         <td>-</td>
                                     @endif
                                 @endfor
-                                <td>
-                                    <a href="{{ route('kaprodi.cpl-mata-kuliah.edit') }}">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
-                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -75,4 +68,13 @@
         </div>
     </div>
 </div>
+<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
+
+<script>
+    function printDataTable() {
+        window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
+        window.frames["print_frame"].window.focus();
+        window.frames["print_frame"].window.print();
+    }
+</script>
 @endsection

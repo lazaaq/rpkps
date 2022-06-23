@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Tahun</label>
+                        <label>Komponen</label>
                         <input name="component" class="form-control" value="{{ $learningGoal->component }}">
                         <div class="text-danger">
                             @error('component')

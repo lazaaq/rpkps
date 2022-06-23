@@ -26,15 +26,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [KurikulumController::class, 'index']);
-// Route::get('/kurikulum', [KurikulumController::class, 'index']);
-// Route::get('/kurikulum/add', [KurikulumController::class, 'add']);
-// Route::post('/kurikulum/insert', [KurikulumController::class, 'insert']);
-// Login
-Route::view('/login', 'v_login');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // KAPRODI
-Route::prefix('kaprodi')->group(function () {
+Route::group(['middleware' => 'isKaprodi', 'prefix' => 'kaprodi'], function () {
     Route::prefix('kurikulum')->group(function () {
         Route::get('', [CurriculumController::class, 'index'])->name('kaprodi.kurikulum.index'); // kaprodi.kurikulum.v_kurikulum
         Route::get('create', [CurriculumController::class, 'create'])->name('kaprodi.kurikulum.create'); // kaprodi.kurikulum.v_addkurikulum
@@ -69,7 +66,7 @@ Route::prefix('kaprodi')->group(function () {
 });
 
 // DOSEN
-Route::prefix('dosen')->group(function () {
+Route::group(['middleware' => 'isDosen', 'prefix' => 'dosen'], function () {
     Route::prefix('rpkps')->group(function () {
         Route::get('', [RpkpsController::class, 'index'])->name('dosen.rpkps.index');
         Route::get('{id}', [RpkpsController::class, 'show'])->name('dosen.rpkps.show');
@@ -81,7 +78,7 @@ Route::prefix('dosen')->group(function () {
 });
 
 // AKADEMIK
-Route::prefix('akademik')->group(function () {
+Route::group(['middleware' => 'isAkademik', 'prefix' => 'akademik'], function () {
     Route::prefix('dosen')->group(function () {
         Route::get('', [LecturerController::class, 'index'])->name('akademik.dosen.index'); // akademik.dosen.v_dosen
         Route::get('create', [LecturerController::class, 'create'])->name('akademik.dosen.create'); // akademik.dosen.v_adddosen
@@ -113,7 +110,7 @@ Route::prefix('akademik')->group(function () {
 });
 
 // MAHASISWA
-Route::prefix('mahasiswa')->group(function () {
+Route::group(['middleware' => 'isMahasiswa', 'prefix' => 'mahasiswa'], function () {
     Route::prefix('perkuliahan')->group(function () {
         Route::get('', [StudentCourseController::class, 'index'])->name('mahasiswa.perkuliahan.index'); // mahasiswa.perkuliahan.v_pelaksanaanPerkuliahan
         Route::get('{courseId}/{lecturerPlottingId}', [StudentCourseController::class, 'show'])->name('mahasiswa.perkuliahan.show'); // mahasiswa.perkuliahan.v_perkuliahanMingguan
@@ -121,9 +118,6 @@ Route::prefix('mahasiswa')->group(function () {
     });
 });
 
-Route::get('/', function () {
-    return redirect('/kaprodi/kurikulum');
-});
 // route::view('/pemetaanprofil', 'kaprodi.pemetaanprofil.v_pemetaanprofil');
 // route::view('/editpemetaanprofil', 'kaprodi.pemetaanprofil.v_editpemetaanprofil');
 // route::view('/pemetaancpl', 'kaprodi.pemetaancpl.v_pemetaancpl');
@@ -159,3 +153,7 @@ route::view('/rpkpm', 'dosen.rpkpm.v_rpkpm');
 route::view('/editrpkpm', 'dosen.rpkpm.v_editrpkpm');
 route::view('/formTambahLaporan', 'dosen.perkuliahan.laporan.v_form_tambahdata');
 route::view('/hasilKesesuaian', 'dosen.perkuliahan.pelaksanaan.v_hasilkesesuaian');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

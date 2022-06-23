@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="year" class="form-control" value="{{ $curriculum->year }}">
+                        <input name="year" class="form-control" value="{{ $curriculum->year }}" type="number" min="0">
                         <div class="text-danger">
                             @error('year')
                             {{ $message }}

@@ -46,6 +46,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
+                <div class="">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ Auth::user()->name }}
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </header>
 
@@ -104,6 +114,8 @@
     <script src="{{asset('adminlte')}}/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
     <script src="{{asset('adminlte')}}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 5.2 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- DataTables -->
     <script src="{{asset('adminlte')}}/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('adminlte')}}/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

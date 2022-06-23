@@ -23,7 +23,7 @@
                     </div>
                     <div class="form-group">
                         <label>Tahun</label>
-                        <input name="year" class="form-control" value="{{ old('year') }}">
+                        <input name="year" class="form-control" value="{{ old('year') }}" type="number" min="0">
                         <div class="text-danger">
                             @error('year')
                             {{ $message }}

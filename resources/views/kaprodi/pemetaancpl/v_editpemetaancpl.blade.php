@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-header">
-                <a href="/pemetaancpl">
+                <a href="#">
                     <button type="button" class="btn btn-success">
                         <i class="fa fa-save" style="margin-right:10px;"></i><span>Simpan</span>
                     </button>
@@ -51,12 +51,12 @@
                                 @endphp
                                 @for( $i = 0; $i < $learningGoal->count(); $i++)
                                     @if( $cpl_count < $cpl->count() && $learningGoal[$i]->code == $cpl[$cpl_count]->learningGoal->code )
-                                        <td>{{ $cpl[$cpl_count]->percentage }}</td>
+                                        <td><input type="text" value="{{ $cpl[$cpl_count]->percentage }}" style="width: 40px!important"></td>
                                         @php
                                             $cpl_count++;
                                         @endphp
                                     @else 
-                                        <td>-</td>
+                                        <td><input type="text" value="" style="width: 40px!important"></td>
                                     @endif
                                 @endfor
                                 <td>
