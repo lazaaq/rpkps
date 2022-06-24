@@ -157,3 +157,7 @@ route::view('/hasilKesesuaian', 'dosen.perkuliahan.pelaksanaan.v_hasilkesesuaian
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
