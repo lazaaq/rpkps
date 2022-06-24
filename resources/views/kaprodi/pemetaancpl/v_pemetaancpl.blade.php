@@ -16,7 +16,7 @@
             </div>
             <div class="box-body ">
                 <div class="card-body table-responsive p-0" id="printableTable">
-                    <table class="table table-striped text-nowrap table-bordered table-hover">
+                    <table id="dataTable" class="table table-striped text-nowrap table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th rowspan="2">No</th>
@@ -77,4 +77,8 @@
         window.frames["print_frame"].window.print();
     }
 </script>
+@endsection
+
+@section('js')
+    @include('layout.js_datatable_pagination')
 @endsection

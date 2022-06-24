@@ -15,7 +15,7 @@
             </div>
             <div class="box-body ">
                 <div class="card-body table-responsive p-0">
-                    <table class="table table-striped text-nowrap table-bordered table-hover">
+                    <table id="dataTable" class="table table-striped text-nowrap table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th rowspan="2">No</th>
@@ -24,7 +24,6 @@
                                 <th colspan="{{ $learningGoalPP->count() }}" style="text-align: center;">PP</th>
                                 <th colspan="{{ $learningGoalKK->count() }}" style="text-align: center;">KK</th>
                                 <th colspan="{{ $learningGoalKeterampilan->count() }}" style="text-align: center;">Ketrampilan Umum</th>
-                                <th rowspan="2">Aksi</th>
                             </tr>
                             <tr>
                                 @foreach ($learningGoalSikap as $item)
@@ -59,13 +58,6 @@
                                         <td><input type="text" value="" style="width: 40px!important"></td>
                                     @endif
                                 @endfor
-                                <td>
-                                    <a href="{{ route('kaprodi.cpl-mata-kuliah.edit') }}">
-                                        <button type="button" class="btn btn-xs btn-warning">
-                                            <span>Edit</span>
-                                        </button>
-                                    </a>
-                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -75,4 +67,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    @include('layout.js_datatable_nopagination')
 @endsection

@@ -132,18 +132,6 @@
             $('.sidebar-menu').tree()
         })
     </script>
-    <script>
-        $(function() {
-            $('#dataTable').DataTable({
-                'paging': true,
-                'lengthChange': true,
-                'searching': true,
-                'ordering': true,
-                'info': true,
-                'autoWidth': true
-            });
-        });
-    </script>
     <!-- highcharts -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -263,7 +251,7 @@
             }]
         }]
     });
-    </script>
+</script>
 
 <script>
     // chart metode
@@ -321,7 +309,7 @@
             }]
         }]
     });
-    </script>
+</script>
 
 <script>
     // chart pengalaman
@@ -379,7 +367,7 @@
             }]
         }]
     });
-    </script>
+</script>
 
 <script>
     // chart media
@@ -437,8 +425,9 @@
             }]
         }]
     });
-    </script>
+</script>
 
+@yield('js')
 
 </body>
 

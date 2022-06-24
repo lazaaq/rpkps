@@ -53,3 +53,7 @@
     }
 </script>
 @endsection
+
+@section('js')
+    @include('layout.js_datatable_pagination')
+@endsection
